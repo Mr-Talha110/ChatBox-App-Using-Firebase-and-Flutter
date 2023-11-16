@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "543326558404",
+    "project_id": "note-fba38",
+    "storage_bucket": "note-fba38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543326558404:android:2adf4ca71e464409b79191",
+        "android_client_info": {
+          "package_name": "com.example.note_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpHaXlw8qanoZavvg_WoykdkeCT4RzDw4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
