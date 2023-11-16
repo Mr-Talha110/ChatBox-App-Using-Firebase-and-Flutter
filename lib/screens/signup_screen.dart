@@ -1,14 +1,27 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SingupScreen extends StatelessWidget {
+class SingupScreen extends StatefulWidget {
   const SingupScreen({super.key});
+
+  @override
+  State<SingupScreen> createState() => _SingupScreenState();
+}
+
+class _SingupScreenState extends State<SingupScreen> {
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController userPhoneController = TextEditingController();
+  TextEditingController userEmailController = TextEditingController();
+  TextEditingController userPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          centerTitle: true,
           iconTheme: const IconThemeData(color: Colors.white),
           backgroundColor: Colors.red,
           title: const Text(
@@ -29,31 +42,32 @@ class SingupScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
-                decoration: const InputDecoration(hintText: 'Name'),
+                controller: userNameController,
+                decoration: const InputDecoration(hintText: 'Username'),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
-                decoration: const InputDecoration(hintText: 'Email'),
+                controller: userPhoneController,
+                decoration: const InputDecoration(hintText: 'Phone'),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
+                controller: userEmailController,
+                decoration: const InputDecoration(
+                  hintText: 'Email',
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              child: TextFormField(
+                controller: userPasswordController,
                 decoration: const InputDecoration(
                     hintText: 'Password',
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.grey,
-                    )),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                    hintText: 'Confirm Password',
                     suffixIcon: Icon(
                       Icons.remove_red_eye,
                       color: Colors.grey,
@@ -90,7 +104,30 @@ class SingupScreen extends StatelessWidget {
                         EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
                     backgroundColor: MaterialStatePropertyAll(Colors.red)),
                 onPressed: () {
-                  Get.to(const SingupScreen());
+                  var userName = userNameController.text.trim();
+                  var userPhone = userPhoneController.text.trim();
+                  var userEmail = userEmailController.text.trim();
+                  var userPassword = userPasswordController.text.trim();
+
+                  FirebaseAuth.instance
+                      .createUserWithEmailAndPassword(
+                          email: userEmail, password: userPassword)
+                      .then((value) => {
+                            print('User created'),
+                            FirebaseFirestore.instance
+                                .collection('users')
+                                .doc()
+                                .set({
+                              'username': userName,
+                              'userPhone': userPhone,
+                              'userEmail': userEmail,
+                            }).catchError((error) {
+                              print('error occured during data storing $error');
+                            }),
+                          })
+                      .catchError((error) {
+                    print(' error occured $error');
+                  });
                 },
                 child: const Text(
                   'Signup',
