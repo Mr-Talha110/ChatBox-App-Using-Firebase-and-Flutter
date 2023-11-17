@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, unnecessary_null_comparison
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -72,7 +72,74 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                 child: const Text(
                   'Save',
                   style: TextStyle(color: Colors.white),
-                ))
+                )),
+            const SizedBox(height: 50),
+            Expanded(
+                child: StreamBuilder(
+              stream: FirebaseFirestore.instance
+                  .collection('notes')
+                  .where('userId', isEqualTo: user!.uid)
+                  .snapshots(),
+              builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (snapshot.hasError) {
+                  return const Text('Erorr Occurred');
+                }
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(
+                      child: CircularProgressIndicator(
+                    color: Colors.red,
+                  ));
+                }
+                if (snapshot.data!.docs.isEmpty) {
+                  return const Center(
+                      child: Text(
+                    'No Data Available',
+                    style: TextStyle(
+                        fontSize: 35,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.red),
+                  ));
+                }
+                if (snapshot != null && snapshot.data != null) {
+                  return ListView.builder(
+                      itemCount: snapshot.data!.docs.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: double.infinity,
+                          margin: const EdgeInsets.symmetric(vertical: 5),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 30),
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                snapshot.data!.docs[index]['note'],
+                                style: const TextStyle(color: Colors.white),
+                              ),
+                              const Row(
+                                children: [
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                  ),
+                                  SizedBox(width: 10),
+                                  Icon(
+                                    Icons.delete,
+                                    color: Colors.white,
+                                  )
+                                ],
+                              )
+                            ],
+                          ),
+                        );
+                      });
+                }
+                return Container();
+              },
+            ))
           ],
         ),
       ),
