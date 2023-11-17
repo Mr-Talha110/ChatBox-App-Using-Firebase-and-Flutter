@@ -16,6 +16,8 @@ class _SingupScreenState extends State<SingupScreen> {
   TextEditingController userEmailController = TextEditingController();
   TextEditingController userPasswordController = TextEditingController();
 
+  User? currentUser = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,20 +115,32 @@ class _SingupScreenState extends State<SingupScreen> {
                       .createUserWithEmailAndPassword(
                           email: userEmail, password: userPassword)
                       .then((value) => {
+                            // ignore: avoid_print
                             print('User created'),
                             FirebaseFirestore.instance
                                 .collection('users')
-                                .doc()
+                                .doc(currentUser!.uid)
                                 .set({
                               'username': userName,
                               'userPhone': userPhone,
                               'userEmail': userEmail,
+                              'createdDate': DateTime.now(),
+                              'password': userPassword,
+                              'userId': currentUser!.uid
+                            }).then((value) {
+                              userEmailController.clear();
+                              userNameController.clear();
+                              userPasswordController.clear();
+                              userPhoneController.clear();
                             }).catchError((error) {
+                              // ignore: avoid_print
                               print('error occured during data storing $error');
                             }),
                           })
+                      // ignore: body_might_complete_normally_catch_error
                       .catchError((error) {
-                    print(' error occured $error');
+                    // ignore: avoid_print
+                    print('Error occurred during user creation $error');
                   });
                 },
                 child: const Text(
