@@ -3,6 +3,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:note_app/components/update_data.dart';
 
 class CreateNoteScreen extends StatefulWidget {
   const CreateNoteScreen({super.key});
@@ -63,6 +65,13 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                         'userId': user!.uid,
                       }).then((value) {
                         notesController.clear();
+                        Get.snackbar(
+                            duration: const Duration(seconds: 1),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 50),
+                            snackPosition: SnackPosition.BOTTOM,
+                            'Note Saved',
+                            '');
                       });
                     } catch (e) {
                       print(e);
@@ -104,6 +113,8 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                   return ListView.builder(
                       itemCount: snapshot.data!.docs.length,
                       itemBuilder: (context, index) {
+                        var note = snapshot.data!.docs[index]['note'];
+                        var docId = snapshot.data!.docs[index].id;
                         return Container(
                           width: double.infinity,
                           margin: const EdgeInsets.symmetric(vertical: 5),
@@ -116,19 +127,45 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                snapshot.data!.docs[index]['note'],
+                                note,
                                 style: const TextStyle(color: Colors.white),
                               ),
-                              const Row(
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(
-                                    Icons.edit,
-                                    color: Colors.white,
+                                  InkWell(
+                                    splashColor: Colors.white,
+                                    onTap: () {
+                                      Get.dialog(UpdateData(
+                                        docId: docId,
+                                        note: note,
+                                      ));
+                                      print(docId);
+                                    },
+                                    child: const Icon(
+                                      Icons.edit,
+                                      color: Colors.white,
+                                    ),
                                   ),
-                                  SizedBox(width: 10),
-                                  Icon(
-                                    Icons.delete,
-                                    color: Colors.white,
+                                  const SizedBox(width: 10),
+                                  InkWell(
+                                    onTap: () async {
+                                      await FirebaseFirestore.instance
+                                          .collection('notes')
+                                          .doc(docId)
+                                          .delete();
+                                      Get.snackbar(
+                                          duration: const Duration(seconds: 1),
+                                          margin: const EdgeInsets.symmetric(
+                                              horizontal: 16, vertical: 50),
+                                          snackPosition: SnackPosition.BOTTOM,
+                                          'Note Deleted',
+                                          '');
+                                    },
+                                    child: const Icon(
+                                      Icons.delete,
+                                      color: Colors.white,
+                                    ),
                                   )
                                 ],
                               )
