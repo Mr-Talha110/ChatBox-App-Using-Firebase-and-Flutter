@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 
 signUpUser(String userName, String userPhone, String userEmail,
-    String userPassword) async {
+    String userPassword, String name) async {
   User? userId = FirebaseAuth.instance.currentUser;
   try {
     await FirebaseFirestore.instance.collection('users').doc(userId!.uid).set({
@@ -14,7 +14,8 @@ signUpUser(String userName, String userPhone, String userEmail,
       'userEmail': userEmail,
       'createdDate': DateTime.now(),
       'password': userPassword,
-      'userId': userId.uid
+      'userId': userId.uid,
+      'name': name,
     }).then((value) {
       FirebaseAuth.instance.signOut();
       Get.back();

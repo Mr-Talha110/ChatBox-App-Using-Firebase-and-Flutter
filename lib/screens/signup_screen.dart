@@ -16,6 +16,7 @@ class _SingupScreenState extends State<SingupScreen> {
   TextEditingController userPhoneController = TextEditingController();
   TextEditingController userEmailController = TextEditingController();
   TextEditingController userPasswordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   User? currentUser = FirebaseAuth.instance.currentUser;
 
@@ -42,6 +43,13 @@ class _SingupScreenState extends State<SingupScreen> {
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 50),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              child: TextFormField(
+                controller: nameController,
+                decoration: const InputDecoration(hintText: 'Name'),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
@@ -111,6 +119,7 @@ class _SingupScreenState extends State<SingupScreen> {
                   var userPhone = userPhoneController.text.trim();
                   var userEmail = userEmailController.text.trim();
                   var userPassword = userPasswordController.text.trim();
+                  var name = nameController.text.trim();
 
                   await FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
@@ -118,8 +127,8 @@ class _SingupScreenState extends State<SingupScreen> {
                       .then((value) => {
                             // ignore: avoid_print
                             print('User created'),
-                            signUpUser(
-                                userName, userPhone, userEmail, userPassword),
+                            signUpUser(userName, userPhone, userEmail,
+                                userPassword, name),
                           })
                       // ignore: body_might_complete_normally_catch_error
                       .catchError((error) {

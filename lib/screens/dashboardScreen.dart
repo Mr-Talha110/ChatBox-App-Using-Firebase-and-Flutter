@@ -52,7 +52,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           margin: const EdgeInsets.all(24),
           child: const Column(children: [
             Text(
-              'Your are ln',
+              'Your are ln ',
               style: TextStyle(
                   color: Colors.red, fontSize: 35, fontWeight: FontWeight.w900),
             ),
