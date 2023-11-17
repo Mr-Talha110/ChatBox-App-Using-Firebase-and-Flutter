@@ -1,3 +1,6 @@
+// ignore_for_file: avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -6,6 +9,7 @@ class ForgetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController forgotPasswordController = TextEditingController();
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
@@ -30,6 +34,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
+                controller: forgotPasswordController,
                 decoration: const InputDecoration(hintText: 'Email'),
               ),
             ),
@@ -62,7 +67,19 @@ class ForgetPasswordScreen extends StatelessWidget {
                     padding: MaterialStatePropertyAll(
                         EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
                     backgroundColor: MaterialStatePropertyAll(Colors.red)),
-                onPressed: () {},
+                onPressed: () async {
+                  var forgotEmail = forgotPasswordController.text.trim();
+                  try {
+                    await FirebaseAuth.instance
+                        .sendPasswordResetEmail(email: forgotEmail)
+                        .then((value) {
+                      print('Email sent');
+                      Get.back();
+                    });
+                  } on FirebaseAuthException catch (e) {
+                    print('Eror is $e');
+                  }
+                },
                 child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.white),

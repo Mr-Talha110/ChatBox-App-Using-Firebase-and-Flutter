@@ -29,12 +29,6 @@ class _LoginScreenState extends State<LoginScreen> {
             'Firebase App',
             style: TextStyle(color: Colors.white),
           ),
-          leading: const Drawer(
-              backgroundColor: Colors.transparent,
-              child: Icon(
-                Icons.menu,
-                color: Colors.white,
-              )),
         ),
         body: Container(
           alignment: Alignment.center,

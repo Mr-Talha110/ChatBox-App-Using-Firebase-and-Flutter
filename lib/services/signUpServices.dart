@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
@@ -17,7 +19,6 @@ signUpUser(String userName, String userPhone, String userEmail,
       FirebaseAuth.instance.signOut();
       Get.back();
     }).catchError((error) {
-      // ignore: avoid_print
       print('error occured during data storing $error');
     });
   } on FirebaseAuthException catch (e) {
