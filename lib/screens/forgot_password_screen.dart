@@ -81,7 +81,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   }
                 },
                 child: const Text(
-                  'Login',
+                  'Forgot',
                   style: TextStyle(color: Colors.white),
                 ))
           ]),
