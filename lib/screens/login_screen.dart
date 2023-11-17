@@ -1,10 +1,22 @@
+// ignore_for_file: unused_local_variable, avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/screens/dashboardScreen.dart';
 import 'package:note_app/screens/forgot_password_screen.dart';
 import 'package:note_app/screens/signup_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController loginEmailController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +49,14 @@ class LoginScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
+                controller: loginEmailController,
                 decoration: const InputDecoration(hintText: 'Email'),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
               child: TextFormField(
+                controller: loginPasswordController,
                 decoration: const InputDecoration(
                     hintText: 'Password',
                     suffixIcon: Icon(
@@ -80,7 +94,25 @@ class LoginScreen extends StatelessWidget {
                   padding: MaterialStatePropertyAll(
                       EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
                   backgroundColor: MaterialStatePropertyAll(Colors.red)),
-              onPressed: () {},
+              onPressed: () async {
+                // Get.offAll(const DashboardScreen());
+                var loginEmail = loginEmailController.text.trim();
+                var loginPassword = loginPasswordController.text.trim();
+                try {
+                  final User? firebaseUser = (await FirebaseAuth.instance
+                          .signInWithEmailAndPassword(
+                              email: loginEmail, password: loginPassword))
+                      .user;
+                  if (firebaseUser != null) {
+                    Get.offAll(const DashboardScreen());
+                  } else {
+                    print(
+                        'Cannot login at that time. Please check email and password');
+                  }
+                } on FirebaseAuthException catch (e) {
+                  print('Eror login $e');
+                }
+              },
               child: const Text(
                 'Login',
                 style: TextStyle(color: Colors.white),

@@ -1,7 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../services/signUpServices.dart';
 
 class SingupScreen extends StatefulWidget {
   const SingupScreen({super.key});
@@ -105,37 +106,20 @@ class _SingupScreenState extends State<SingupScreen> {
                     padding: MaterialStatePropertyAll(
                         EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
                     backgroundColor: MaterialStatePropertyAll(Colors.red)),
-                onPressed: () {
+                onPressed: () async {
                   var userName = userNameController.text.trim();
                   var userPhone = userPhoneController.text.trim();
                   var userEmail = userEmailController.text.trim();
                   var userPassword = userPasswordController.text.trim();
 
-                  FirebaseAuth.instance
+                  await FirebaseAuth.instance
                       .createUserWithEmailAndPassword(
                           email: userEmail, password: userPassword)
                       .then((value) => {
                             // ignore: avoid_print
                             print('User created'),
-                            FirebaseFirestore.instance
-                                .collection('users')
-                                .doc(currentUser!.uid)
-                                .set({
-                              'username': userName,
-                              'userPhone': userPhone,
-                              'userEmail': userEmail,
-                              'createdDate': DateTime.now(),
-                              'password': userPassword,
-                              'userId': currentUser!.uid
-                            }).then((value) {
-                              userEmailController.clear();
-                              userNameController.clear();
-                              userPasswordController.clear();
-                              userPhoneController.clear();
-                            }).catchError((error) {
-                              // ignore: avoid_print
-                              print('error occured during data storing $error');
-                            }),
+                            signUpUser(
+                                userName, userPhone, userEmail, userPassword),
                           })
                       // ignore: body_might_complete_normally_catch_error
                       .catchError((error) {
