@@ -22,74 +22,134 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.red,
-          title: const Text(
-            'Firebase App',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
         body: Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(children: [
-            const SizedBox(height: 50),
-            const Text(
-              'Login Page',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 50),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextFormField(
-                controller: loginEmailController,
-                decoration: const InputDecoration(hintText: 'Email'),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              child: TextFormField(
-                controller: loginPasswordController,
-                decoration: const InputDecoration(
-                    hintText: 'Password',
-                    suffixIcon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.grey,
-                    )),
-              ),
-            ),
-            const SizedBox(height: 30),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Not have an account?',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            const SizedBox(height: 100),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Login',
+                style: TextStyle(
+                  color: Color(0xFF565DFA),
+                  fontSize: 32,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                  height: 0.02,
+                  letterSpacing: -0.35,
                 ),
-                TextButton(
-                    style: const ButtonStyle(
-                        padding: MaterialStatePropertyAll(EdgeInsets.zero)),
-                    onPressed: () {
-                      Get.to(const SingupScreen());
-                    },
-                    child: const Text(
-                      'Signup',
-                      style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600),
-                    ))
-              ],
+              ),
             ),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              style: const ButtonStyle(
-                  padding: MaterialStatePropertyAll(
-                      EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.red)),
-              onPressed: () async {
-                // Get.offAll(const DashboardScreen());
+            const SizedBox(
+              height: 40,
+            ),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Login now to track all your expenses and income at a place!',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                  letterSpacing: -0.18,
+                ),
+              ),
+            ),
+            const SizedBox(height: 40),
+            TextFormField(
+              cursorColor: const Color(0xff575DFB),
+              controller: loginEmailController,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Color(0xff575DFB),
+                ),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide:
+                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide:
+                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                hintText: 'Ex: abc@example.com',
+                hintStyle: TextStyle(
+                  color: Color(0xFFC7C7C7),
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0.09,
+                  letterSpacing: -0.18,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextFormField(
+              cursorColor: const Color(0xff575DFB),
+              controller: loginPasswordController,
+              decoration: const InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.lock,
+                    color: Color(0xff575DFB),
+                  ),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      borderSide:
+                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                  focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      borderSide:
+                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                  hintText: 'Password',
+                  hintStyle: TextStyle(
+                    color: Color(0xFFC7C7C7),
+                    fontSize: 16,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                    height: 0.09,
+                    letterSpacing: -0.18,
+                  ),
+                  suffixIcon: Icon(
+                    Icons.remove_red_eye,
+                    color: Color(0xff575DFB),
+                  )),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                  style: const ButtonStyle(
+                      padding: MaterialStatePropertyAll(EdgeInsets.zero)),
+                  onPressed: () {
+                    Get.to(const ForgetPasswordScreen());
+                  },
+                  child: const Text(
+                    'Forgot password?',
+                    style: TextStyle(
+                      color: Color(0xFF565DFA),
+                      fontSize: 12,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w400,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color(0xff575DFB),
+                      height: 0.17,
+                      letterSpacing: -0.13,
+                    ),
+                  )),
+            ),
+            const SizedBox(height: 28),
+            InkWell(
+              onTap: () async {
                 var loginEmail = loginEmailController.text.trim();
                 var loginPassword = loginPasswordController.text.trim();
                 try {
@@ -107,22 +167,64 @@ class _LoginScreenState extends State<LoginScreen> {
                   print('Eror login $e');
                 }
               },
-              child: const Text(
-                'Login',
-                style: TextStyle(color: Colors.white),
+              child: Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xff575DFB),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: const Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ),
             ),
-            TextButton(
-                onPressed: () {
-                  Get.to(const ForgetPasswordScreen());
-                },
-                child: const Text(
-                  'Forgot password!',
+            const SizedBox(height: 50),
+            const Divider(color: Colors.black, thickness: 1.5),
+            const SizedBox(height: 29),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Don\'t have an account?',
                   style: TextStyle(
-                      color: Colors.red,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16),
-                ))
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                    height: 0,
+                    letterSpacing: -0.18,
+                  ),
+                ),
+                TextButton(
+                    style: const ButtonStyle(
+                        padding: MaterialStatePropertyAll(EdgeInsets.zero)),
+                    onPressed: () {
+                      Get.to(const SingupScreen());
+                    },
+                    child: const Text(
+                      'Register',
+                      style: TextStyle(
+                        color: Color(0xFF565DFA),
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Color(0xff575DFB),
+                        height: 0,
+                        letterSpacing: -0.18,
+                      ),
+                    ))
+              ],
+            ),
+            const SizedBox(height: 30),
           ]),
         ));
   }
