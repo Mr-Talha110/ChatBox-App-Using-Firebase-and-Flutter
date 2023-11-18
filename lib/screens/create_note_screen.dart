@@ -20,11 +20,10 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: const Color(0xff575DFB),
+        iconTheme: const IconThemeData(color: Colors.black),
         title: const Text(
           'Save Your Notes here',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.black),
         ),
       ),
       body: Container(
@@ -32,21 +31,33 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
         child: Column(
           children: [
             TextFormField(
-              controller: notesController,
               cursorColor: const Color(0xff575DFB),
-              maxLines: null,
+              controller: notesController,
               decoration: const InputDecoration(
-                border: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xff575DFB),
-                  ),
+                prefixIcon: Icon(
+                  Icons.note_alt_sharp,
+                  color: Color(0xff575DFB),
                 ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Color(0xff575DFB),
-                  ),
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide:
+                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
+                    borderSide:
+                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                hintText: 'Notes',
+                hintStyle: TextStyle(
+                  color: Color(0xFFC7C7C7),
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0.09,
+                  letterSpacing: -0.18,
                 ),
-                hintText: 'Add Notes',
               ),
             ),
             const SizedBox(height: 50),

@@ -2,8 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/screens/dashboardScreen.dart';
-import 'package:note_app/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:note_app/splash_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: user != null ? const DashboardScreen() : const LoginScreen(),
+      home: user != null ? const DashboardScreen() : const SplashScreen(),
     );
   }
 }
