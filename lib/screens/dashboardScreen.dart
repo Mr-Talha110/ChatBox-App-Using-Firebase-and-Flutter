@@ -18,12 +18,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Dashboard',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.red,
+          backgroundColor: const Color(0xff575DFB),
           actions: [
+            const Text(
+              'Logout',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500),
+            ),
+            const SizedBox(
+              width: 10,
+            ),
             InkWell(
               onTap: () async {
                 await FirebaseAuth.instance.signOut();
@@ -38,7 +44,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.red,
+          backgroundColor: const Color(0xff575DFB),
           onPressed: () {
             Get.to(const CreateNoteScreen());
           },
@@ -47,16 +53,18 @@ class _DashboardScreenState extends State<DashboardScreen> {
             color: Colors.white,
           ),
         ),
-        body: Container(
-          alignment: Alignment.topCenter,
-          margin: const EdgeInsets.all(24),
-          child: const Column(children: [
-            Text(
-              'Your are ln ',
-              style: TextStyle(
-                  color: Colors.red, fontSize: 35, fontWeight: FontWeight.w900),
+        body: const Center(
+          child: Text(
+            'DASHBOARD',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 43.56,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w700,
+              height: 0,
+              letterSpacing: -0.48,
             ),
-          ]),
+          ),
         ));
   }
 }

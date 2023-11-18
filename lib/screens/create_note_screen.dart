@@ -21,7 +21,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
-        backgroundColor: Colors.red,
+        backgroundColor: const Color(0xff575DFB),
         title: const Text(
           'Save Your Notes here',
           style: TextStyle(color: Colors.white),
@@ -33,55 +33,69 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
           children: [
             TextFormField(
               controller: notesController,
-              cursorColor: Colors.red,
+              cursorColor: const Color(0xff575DFB),
               maxLines: null,
               decoration: const InputDecoration(
                 border: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                  borderSide: BorderSide(
+                    color: Color(0xff575DFB),
+                  ),
                 ),
                 focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                  borderSide: BorderSide(
+                    color: Color(0xff575DFB),
+                  ),
                 ),
                 hintText: 'Add Notes',
               ),
             ),
             const SizedBox(height: 50),
-            ElevatedButton(
-                style: const ButtonStyle(
-                  padding: MaterialStatePropertyAll(
-                      EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
-                  backgroundColor: MaterialStatePropertyAll(Colors.red),
-                ),
-                onPressed: () async {
-                  var notes = notesController.text.trim();
-                  if (notes != "") {
-                    try {
-                      await FirebaseFirestore.instance
-                          .collection('notes')
-                          .doc()
-                          .set({
-                        'createdAt': DateTime.now(),
-                        'note': notes,
-                        'userId': user!.uid,
-                      }).then((value) {
-                        notesController.clear();
-                        Get.snackbar(
-                            duration: const Duration(seconds: 1),
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 50),
-                            snackPosition: SnackPosition.BOTTOM,
-                            'Note Saved',
-                            '');
-                      });
-                    } catch (e) {
-                      print(e);
-                    }
+            InkWell(
+              onTap: () async {
+                var notes = notesController.text.trim();
+                if (notes != "") {
+                  try {
+                    await FirebaseFirestore.instance
+                        .collection('notes')
+                        .doc()
+                        .set({
+                      'createdAt': DateTime.now(),
+                      'note': notes,
+                      'userId': user!.uid,
+                    }).then((value) {
+                      notesController.clear();
+                      Get.snackbar(
+                          duration: const Duration(seconds: 1),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 50),
+                          snackPosition: SnackPosition.BOTTOM,
+                          'Note Saved',
+                          '');
+                    });
+                  } catch (e) {
+                    print(e);
                   }
-                },
+                }
+              },
+              child: Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: const Color(0xff575DFB),
+                  borderRadius: BorderRadius.circular(16),
+                ),
                 child: const Text(
                   'Save',
-                  style: TextStyle(color: Colors.white),
-                )),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ),
             const SizedBox(height: 50),
             Expanded(
                 child: StreamBuilder(
@@ -96,7 +110,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
                       child: CircularProgressIndicator(
-                    color: Colors.red,
+                    color: Color(0xff575DFB),
                   ));
                 }
                 if (snapshot.data!.docs.isEmpty) {
@@ -104,9 +118,10 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                       child: Text(
                     'No Data Available',
                     style: TextStyle(
-                        fontSize: 35,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.red),
+                      fontSize: 35,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
                   ));
                 }
                 if (snapshot != null && snapshot.data != null) {
@@ -121,7 +136,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 30),
                           decoration: BoxDecoration(
-                              color: Colors.red,
+                              color: const Color(0xff575DFB),
                               borderRadius: BorderRadius.circular(30)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,

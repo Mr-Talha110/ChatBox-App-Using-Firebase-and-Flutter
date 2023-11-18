@@ -17,7 +17,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController loginEmailController = TextEditingController();
   TextEditingController loginPasswordController = TextEditingController();
-
+  bool showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Column(children: [
-            const SizedBox(height: 100),
+            const SizedBox(height: 140),
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -93,25 +93,26 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 20,
             ),
             TextFormField(
+              obscureText: !showPassword,
               cursorColor: const Color(0xff575DFB),
               controller: loginPasswordController,
-              decoration: const InputDecoration(
-                  prefixIcon: Icon(
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(
                     Icons.lock,
                     color: Color(0xff575DFB),
                   ),
                   contentPadding:
-                      EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                  enabledBorder: OutlineInputBorder(
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  enabledBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                  focusedBorder: OutlineInputBorder(
+                  focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
                   hintText: 'Password',
-                  hintStyle: TextStyle(
+                  hintStyle: const TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
                     fontStyle: FontStyle.italic,
@@ -120,10 +121,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 0.09,
                     letterSpacing: -0.18,
                   ),
-                  suffixIcon: Icon(
-                    Icons.remove_red_eye,
-                    color: Color(0xff575DFB),
-                  )),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          showPassword = !showPassword;
+                        });
+                      },
+                      icon: showPassword
+                          ? const Icon(
+                              Icons.visibility_off,
+                              color: Color(0xff575DFB),
+                            )
+                          : const Icon(
+                              Icons.visibility,
+                              color: Color(0xff575DFB),
+                            ))),
             ),
             Align(
               alignment: Alignment.centerLeft,
