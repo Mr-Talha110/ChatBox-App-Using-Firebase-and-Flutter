@@ -49,7 +49,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             Get.to(const CreateNoteScreen());
           },
           child: const Icon(
-            Icons.ads_click,
+            Icons.note_alt_sharp,
             color: Colors.white,
           ),
         ),

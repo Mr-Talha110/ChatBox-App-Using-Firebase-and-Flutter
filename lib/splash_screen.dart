@@ -29,7 +29,7 @@ class SplashScreen extends StatelessWidget {
         const Align(
           alignment: Alignment.topLeft,
           child: Text(
-            'MaxPense',
+            'ChatBox',
             style: TextStyle(
               color: Color(0xFF565DFA),
               fontSize: 40,
@@ -41,7 +41,7 @@ class SplashScreen extends StatelessWidget {
           ),
         ),
         const Text(
-          'A place where you can track all your expenses and incomes...',
+          'A place where you can contact with people and keep track of your expenses...',
           style: TextStyle(
             color: Colors.black,
             fontSize: 16,

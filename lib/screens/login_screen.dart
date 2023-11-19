@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Login now to track all your expenses and income at a place!',
+              'Login now to contact with people and track all your expenses & income at a place!',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 16,
@@ -75,7 +75,7 @@ class _LoginScreenState extends State<LoginScreen> {
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
                   borderSide: BorderSide(color: Color(0xff575DFB), width: 1.5)),
-              hintText: 'Ex: abc@example.com',
+              hintText: 'Email',
               hintStyle: TextStyle(
                 color: Color(0xFFC7C7C7),
                 fontSize: 16,

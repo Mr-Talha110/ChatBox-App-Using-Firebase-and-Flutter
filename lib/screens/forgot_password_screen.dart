@@ -70,7 +70,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
                         BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                hintText: 'Ex: example@gmail.com',
+                hintText: 'Email',
                 hintStyle: TextStyle(
                   color: Color(0xFFC7C7C7),
                   fontSize: 16,

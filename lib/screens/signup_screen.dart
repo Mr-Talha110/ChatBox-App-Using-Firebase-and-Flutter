@@ -89,7 +89,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                  hintText: 'Ex: Talha',
+                  hintText: 'Name',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -120,7 +120,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                  hintText: 'Ex: example123',
+                  hintText: 'Username',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -151,7 +151,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                  hintText: 'Ex: 000-0000-0000',
+                  hintText: 'Phone',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -182,7 +182,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                  hintText: 'Ex: abc@example.com',
+                  hintText: 'Email',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
