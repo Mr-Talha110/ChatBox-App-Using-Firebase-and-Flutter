@@ -13,32 +13,37 @@ class SettingsList extends StatelessWidget {
       child: ListView.builder(
           itemCount: settingsList.length,
           itemBuilder: (context, index) {
-            return Container(
-                margin: const EdgeInsets.symmetric(vertical: 15),
-                child: Row(
-                  children: [
-                    SvgPicture.asset(
-                      settingsList[index].image,
-                      width: 44,
-                    ),
-                    const SizedBox(width: 14),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(settingsList[index].title,
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            )),
-                        Text(settingsList[index].subTitle,
-                            style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff797C7B)))
-                      ],
-                    )
-                  ],
-                ));
+            return InkWell(
+              onTap: () {
+                Get.to(settingsList[index].screenName);
+              },
+              child: Container(
+                  margin: const EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        settingsList[index].image,
+                        width: 44,
+                      ),
+                      const SizedBox(width: 14),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(settingsList[index].title,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              )),
+                          Text(settingsList[index].subTitle,
+                              style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff797C7B)))
+                        ],
+                      )
+                    ],
+                  )),
+            );
           }),
     );
   }

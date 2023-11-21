@@ -44,7 +44,7 @@ class _SingupScreenState extends State<SingupScreen> {
                 child: Text(
                   'Register',
                   style: TextStyle(
-                    color: Color(0xFF565DFA),
+                    color: Color(0xff24786D),
                     fontSize: 32,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,
@@ -72,23 +72,23 @@ class _SingupScreenState extends State<SingupScreen> {
               ),
               const SizedBox(height: 50),
               TextFormField(
-                cursorColor: const Color(0xff575DFB),
+                cursorColor: const Color(0xff24786D),
                 controller: nameController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.person,
-                    color: Color(0xff575DFB),
+                    color: Color(0xff24786D),
                   ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   hintText: 'Name',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
@@ -103,23 +103,23 @@ class _SingupScreenState extends State<SingupScreen> {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                cursorColor: const Color(0xff575DFB),
+                cursorColor: const Color(0xff24786D),
                 controller: userNameController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.house_rounded,
-                    color: Color(0xff575DFB),
+                    color: Color(0xff24786D),
                   ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   hintText: 'Username',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
@@ -134,23 +134,23 @@ class _SingupScreenState extends State<SingupScreen> {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                cursorColor: const Color(0xff575DFB),
+                cursorColor: const Color(0xff24786D),
                 controller: userPhoneController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.phone,
-                    color: Color(0xff575DFB),
+                    color: Color(0xff24786D),
                   ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   hintText: 'Phone',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
@@ -165,23 +165,23 @@ class _SingupScreenState extends State<SingupScreen> {
               ),
               const SizedBox(height: 10),
               TextFormField(
-                cursorColor: const Color(0xff575DFB),
+                cursorColor: const Color(0xff24786D),
                 controller: userEmailController,
                 decoration: const InputDecoration(
                   prefixIcon: Icon(
                     Icons.email,
-                    color: Color(0xff575DFB),
+                    color: Color(0xff24786D),
                   ),
                   contentPadding:
                       EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                   enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
-                          BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                          BorderSide(color: Color(0xff24786D), width: 1.5)),
                   hintText: 'Email',
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
@@ -197,23 +197,23 @@ class _SingupScreenState extends State<SingupScreen> {
               const SizedBox(height: 10),
               TextFormField(
                 obscureText: !showPassword,
-                cursorColor: const Color(0xff575DFB),
+                cursorColor: const Color(0xff24786D),
                 controller: userPasswordController,
                 decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Color(0xff575DFB),
+                      color: Color(0xff24786D),
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                         horizontal: 24, vertical: 16),
                     enabledBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(16)),
                         borderSide:
-                            BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                            BorderSide(color: Color(0xff24786D), width: 1.5)),
                     focusedBorder: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(16)),
                         borderSide:
-                            BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                            BorderSide(color: Color(0xff24786D), width: 1.5)),
                     hintText: 'Password',
                     hintStyle: const TextStyle(
                       color: Color(0xFFC7C7C7),
@@ -231,9 +231,9 @@ class _SingupScreenState extends State<SingupScreen> {
                         },
                         icon: showPassword
                             ? const Icon(Icons.visibility_off,
-                                color: Color(0xff575DFB))
+                                color: Color(0xff24786D))
                             : const Icon(Icons.visibility,
-                                color: Color(0xff575DFB)))),
+                                color: Color(0xff24786D)))),
               ),
               const SizedBox(height: 40),
               InkWell(
@@ -261,7 +261,7 @@ class _SingupScreenState extends State<SingupScreen> {
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xff575DFB),
+                    color: const Color(0xff24786D),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Text(
@@ -298,12 +298,12 @@ class _SingupScreenState extends State<SingupScreen> {
                     child: const Text(
                       'Login',
                       style: TextStyle(
-                        color: Color(0xFF565DFA),
+                        color: Color(0xff24786D),
                         fontSize: 16,
                         fontFamily: 'Inter',
                         fontWeight: FontWeight.w700,
                         decoration: TextDecoration.underline,
-                        decorationColor: Color(0xFF565DFA),
+                        decorationColor: Color(0xff24786D),
                         height: 0,
                         letterSpacing: -0.18,
                       ),

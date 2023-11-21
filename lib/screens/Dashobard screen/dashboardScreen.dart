@@ -30,7 +30,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             backgroundColor: Colors.white,
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w800),
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w800),
-            selectedItemColor: const Color(0xFF565DFA),
+            selectedItemColor: const Color(0xff24786D),
             onTap: (index) {
               currentPage = index;
               setState(() {});

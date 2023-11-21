@@ -25,7 +25,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               child: Text(
                 'Forgot Password?',
                 style: TextStyle(
-                  color: Color(0xFF565DFA),
+                  color: Color(0xff24786D),
                   fontSize: 32,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
@@ -53,23 +53,23 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             TextFormField(
-              cursorColor: const Color(0xff575DFB),
+              cursorColor: const Color(0xff24786D),
               controller: forgotPasswordController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.email,
-                  color: Color(0xff575DFB),
+                  color: Color(0xff24786D),
                 ),
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: Color(0xff24786D), width: 1.5)),
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: Color(0xff24786D), width: 1.5)),
                 hintText: 'Email',
                 hintStyle: TextStyle(
                   color: Color(0xFFC7C7C7),
@@ -102,7 +102,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xff575DFB),
+                  color: const Color(0xff24786D),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(

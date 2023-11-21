@@ -32,7 +32,7 @@ class SplashScreen extends StatelessWidget {
           child: Text(
             'ChatBox',
             style: TextStyle(
-              color: Color(0xFF565DFA),
+              color: Color(0xff24786D),
               fontSize: 40,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w700,
@@ -100,6 +100,7 @@ class SplashScreen extends StatelessWidget {
             const SizedBox(width: 10),
             Image.asset(
               'assets/images/at.png',
+              color: const Color(0xff24786D),
               width: 24,
             ),
           ]),
@@ -127,12 +128,12 @@ class SplashScreen extends StatelessWidget {
               child: const Text(
                 'Login',
                 style: TextStyle(
-                  color: Color(0xFF565DFA),
+                  color: Color(0xff24786D),
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
                   decoration: TextDecoration.underline,
-                  decorationColor: Color(0xFF565DFA),
+                  decorationColor: Color(0xff24786D),
                   height: 0,
                   letterSpacing: -0.18,
                 ),

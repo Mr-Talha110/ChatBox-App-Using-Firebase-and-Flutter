@@ -12,7 +12,7 @@ class MessagingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color(0xff575DFB),
+        backgroundColor: const Color(0xff24786D),
         onPressed: () {
           Get.to(const CreateNoteScreen());
         },
@@ -22,7 +22,7 @@ class MessagingScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: const Color(0xff575DFB),
+        backgroundColor: const Color(0xff24786D),
         actions: [
           const Text(
             'Logout',

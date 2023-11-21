@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Text(
               'Login',
               style: TextStyle(
-                color: Color(0xFF565DFA),
+                color: Color(0xff24786D),
                 fontSize: 32,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w700,
@@ -61,21 +61,21 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           const SizedBox(height: 40),
           TextFormField(
-            cursorColor: const Color(0xff575DFB),
+            cursorColor: const Color(0xff24786D),
             controller: loginEmailController,
             decoration: const InputDecoration(
               prefixIcon: Icon(
                 Icons.email,
-                color: Color(0xff575DFB),
+                color: Color(0xff24786D),
               ),
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                  borderSide: BorderSide(color: Color(0xff24786D), width: 1.5)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                  borderSide: BorderSide(color: Color(0xff24786D), width: 1.5)),
               hintText: 'Email',
               hintStyle: TextStyle(
                 color: Color(0xFFC7C7C7),
@@ -93,23 +93,23 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           TextFormField(
             obscureText: !showPassword,
-            cursorColor: const Color(0xff575DFB),
+            cursorColor: const Color(0xff24786D),
             controller: loginPasswordController,
             decoration: InputDecoration(
                 prefixIcon: const Icon(
                   Icons.lock,
-                  color: Color(0xff575DFB),
+                  color: Color(0xff24786D),
                 ),
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: Color(0xff24786D), width: 1.5)),
                 focusedBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: Color(0xff24786D), width: 1.5)),
                 hintText: 'Password',
                 hintStyle: const TextStyle(
                   color: Color(0xFFC7C7C7),
@@ -129,11 +129,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     icon: showPassword
                         ? const Icon(
                             Icons.visibility_off,
-                            color: Color(0xff575DFB),
+                            color: Color(0xff24786D),
                           )
                         : const Icon(
                             Icons.visibility,
-                            color: Color(0xff575DFB),
+                            color: Color(0xff24786D),
                           ))),
           ),
           Align(
@@ -147,12 +147,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: const Text(
                   'Forgot password?',
                   style: TextStyle(
-                    color: Color(0xFF565DFA),
+                    color: Color(0xff24786D),
                     fontSize: 12,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xff575DFB),
+                    decorationColor: Color(0xff24786D),
                     height: 0.17,
                     letterSpacing: -0.13,
                   ),
@@ -183,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xff575DFB),
+                color: const Color(0xff24786D),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Text(
@@ -251,12 +251,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: const Text(
                   'Register',
                   style: TextStyle(
-                    color: Color(0xFF565DFA),
+                    color: Color(0xff24786D),
                     fontSize: 16,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xff575DFB),
+                    decorationColor: Color(0xff24786D),
                     height: 0,
                     letterSpacing: -0.18,
                   ),
