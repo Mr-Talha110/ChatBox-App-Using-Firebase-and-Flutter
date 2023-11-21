@@ -7,7 +7,7 @@ class MyInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+      padding: const EdgeInsets.only(left: 24, right: 24, top: 14),
       width: double.infinity,
       decoration: const BoxDecoration(
           color: Colors.white,
