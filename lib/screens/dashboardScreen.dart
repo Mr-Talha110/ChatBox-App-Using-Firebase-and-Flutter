@@ -14,8 +14,24 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  var currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
+    List tabs = [
+      Center(
+        child: Text('Home Page'),
+      ),
+      Center(
+        child: Text('Calls Page'),
+      ),
+      Center(
+        child: Text('Contact Page'),
+      ),
+      Center(
+        child: Text('Settings Page'),
+      ),
+    ];
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xff575DFB),
@@ -43,6 +59,23 @@ class _DashboardScreenState extends State<DashboardScreen> {
             const SizedBox(width: 15),
           ],
         ),
+        bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: const Color(0xFF565DFA),
+            onTap: (index) {
+              currentPage = index;
+              setState(() {});
+            },
+            currentIndex: currentPage,
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home_filled), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_3_rounded), label: 'Contacts'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings), label: 'Settings'),
+            ]),
         floatingActionButton: FloatingActionButton(
           backgroundColor: const Color(0xff575DFB),
           onPressed: () {
@@ -53,18 +86,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
             color: Colors.white,
           ),
         ),
-        body: const Center(
-          child: Text(
-            'DASHBOARD',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 43.56,
-              fontFamily: 'Inter',
-              fontWeight: FontWeight.w700,
-              height: 0,
-              letterSpacing: -0.48,
-            ),
-          ),
-        ));
+        body: tabs[currentPage]);
   }
 }
