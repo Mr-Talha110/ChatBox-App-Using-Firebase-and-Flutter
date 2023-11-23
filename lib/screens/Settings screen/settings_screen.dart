@@ -26,7 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
       body: Column(children: [
-        const SizedBox(height: 50),
+        const SizedBox(height: 60),
         Expanded(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),

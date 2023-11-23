@@ -10,7 +10,13 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  final contactList = Get.put(ContactListController()).contacts;
+  final contactListController = Get.put(ContactListController());
+  @override
+  void initState() {
+    super.initState();
+    contactListController.sortContacts();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,46 +69,101 @@ class _ContactScreenState extends State<ContactScreen> {
                         color: const Color(0xffe6e6e6))),
               ),
               const SizedBox(height: 25),
-              const Text("My Contact",
+              const Text("My Contacts",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                   )),
-              const SizedBox(height: 25),
               Expanded(
                   child: ListView.builder(
-                      itemCount: contactList.length,
+                      itemCount: contactListController.contacts.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(vertical: 10),
-                          width: double.infinity,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  contactList[index].image,
-                                  width: 52,
-                                ),
-                                const SizedBox(width: 20),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(contactList[index].name,
-                                        style: const TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w500,
-                                        )),
-                                    Text(contactList[index].bio,
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w500,
-                                        ))
-                                  ],
-                                )
-                              ]),
-                        );
+                        final contact = contactListController.contacts[index];
+                        if (index == 0 ||
+                            contact.name[0] !=
+                                contactListController
+                                    .contacts[index - 1].name[0]) {
+                          return Column(
+                            children: [
+                              const SizedBox(height: 20),
+                              Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(contact.name[0],
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    )),
+                              ),
+                              const SizedBox(height: 20),
+                              Container(
+                                margin:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                width: double.infinity,
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Image.asset(
+                                        contact.image,
+                                        width: 52,
+                                      ),
+                                      const SizedBox(width: 20),
+                                      Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(contact.name,
+                                              style: const TextStyle(
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.w500,
+                                              )),
+                                          Text(contact.bio,
+                                              style: const TextStyle(
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w500,
+                                              ))
+                                        ],
+                                      )
+                                    ]),
+                              ),
+                            ],
+                          );
+                        } else {
+                          return Container(
+                            margin: const EdgeInsets.symmetric(vertical: 10),
+                            width: double.infinity,
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.asset(
+                                    contact.image,
+                                    width: 52,
+                                  ),
+                                  const SizedBox(width: 20),
+                                  Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(contact.name,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          )),
+                                      Text(contact.bio,
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w500,
+                                          ))
+                                    ],
+                                  )
+                                ]),
+                          );
+                        }
                       }))
             ]),
           ),
