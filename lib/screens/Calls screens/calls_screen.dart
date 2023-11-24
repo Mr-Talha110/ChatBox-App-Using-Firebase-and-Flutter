@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
+import 'package:intl/intl.dart';
 
 class CallsScreen extends StatefulWidget {
   const CallsScreen({super.key});
@@ -73,7 +75,55 @@ class _CallsScreenState extends State<CallsScreen> {
                   child: ListView.builder(
                       itemCount: contactList.length,
                       itemBuilder: (context, index) {
-                        return Container();
+                        String formattedDate =
+                            DateFormat.jm().format(DateTime.now());
+                        return Container(
+                          margin: const EdgeInsets.symmetric(vertical: 15),
+                          width: double.infinity,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset(
+                                    contactList[index].image,
+                                    width: 52,
+                                  ),
+                                  const SizedBox(width: 15),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(contactList[index].name,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w500,
+                                          )),
+                                      Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          SvgPicture.asset(index % 2 == 0
+                                              ? 'assets/images/receivecall.svg'
+                                              : 'assets/images/madecall.svg'),
+                                          const SizedBox(width: 5),
+                                          Text(formattedDate)
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  SvgPicture.asset('assets/images/Call.svg'),
+                                  const SizedBox(width: 15),
+                                  SvgPicture.asset('assets/images/Video.svg'),
+                                ],
+                              )
+                            ],
+                          ),
+                        );
                       }))
             ]),
           ),
