@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../Widgets/my_info.dart';
+import '../Login screen/login_screen.dart';
 
 class MyAccountScreen extends StatelessWidget {
   const MyAccountScreen({super.key});
@@ -21,6 +23,22 @@ class MyAccountScreen extends StatelessWidget {
               Icons.arrow_back,
               color: Colors.white,
             )),
+        actions: [
+          const Text(
+            'Sign out',
+            style: TextStyle(
+                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
+          ),
+          IconButton(
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut();
+                Get.offAll(const LoginScreen());
+              },
+              icon: const Icon(
+                Icons.logout_outlined,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: Container(
         alignment: Alignment.topCenter,

@@ -42,7 +42,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 icon: Icon(Icons.message_rounded),
                 label: 'Messages',
               ),
-              BottomNavigationBarItem(icon: Icon(Icons.call), label: 'Calls'),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.call),
+                label: 'Calls',
+              ),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person_3_rounded), label: 'Contacts'),
               BottomNavigationBarItem(
