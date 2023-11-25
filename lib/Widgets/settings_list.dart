@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:note_app/controller/settings_list_controller.dart';
+import 'package:note_app/app/settings/controller/settings_controller.dart';
 
 import '../utils/constants.dart';
 
@@ -10,7 +10,7 @@ class SettingsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final settingsList = Get.put(SettingsListController()).lists;
+    final settingsList = Get.put(SettingsController()).lists;
     return Expanded(
       child: ListView.builder(
           itemCount: settingsList.length,

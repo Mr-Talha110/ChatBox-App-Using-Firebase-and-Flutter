@@ -41,6 +41,7 @@ class AppStrings {
   static const String editNote = 'Edit Note';
   static const String noteUpdated = 'Note Updated';
   static const String updated = 'Updated';
+  static const String update = 'Update';
   static const String cancel = 'Cancel';
   static const String continueWithGoogle = 'Continue with Google';
   static const String continueWithEmail = 'Continue with Email';

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:note_app/screens/Splash%20Screen/splash_screen.dart';
+import 'package:note_app/app/onboarding/views/splash_screen.dart';
 import 'firebase_options.dart';
-import 'screens/Dashobard screen/dashboardScreen.dart';
+import 'app/dashboard/views/dashboardScreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

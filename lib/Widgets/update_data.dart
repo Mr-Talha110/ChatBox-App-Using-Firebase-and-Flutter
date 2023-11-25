@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/app/notes/controller/notes_controlller.dart';
 import 'package:note_app/utils/strings.dart';
 
 import '../utils/constants.dart';
@@ -16,6 +16,7 @@ class UpdateData extends StatefulWidget {
 
 class _UpdateDataState extends State<UpdateData> {
   TextEditingController noteController = TextEditingController();
+  final controller = Get.put(NotesController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +28,7 @@ class _UpdateDataState extends State<UpdateData> {
           width: double.infinity,
           height: 300,
           decoration: BoxDecoration(
-              color: AppColors.redAlert,
+              color: AppColors.greenColor,
               borderRadius: BorderRadius.circular(20)),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -59,24 +60,12 @@ class _UpdateDataState extends State<UpdateData> {
                                     horizontal: 20, vertical: 10)),
                             backgroundColor:
                                 MaterialStatePropertyAll(AppColors.white)),
-                        onPressed: () async {
-                          await FirebaseFirestore.instance
-                              .collection('notes')
-                              .doc(widget.docId)
-                              .update({'note': noteController.text.trim()});
-
-                          Get.back();
-                          Get.snackbar(
-                              duration: const Duration(seconds: 1),
-                              margin: const EdgeInsets.symmetric(
-                                  horizontal: 16, vertical: 50),
-                              snackPosition: SnackPosition.BOTTOM,
-                              AppStrings.noteUpdated,
-                              '');
+                        onPressed: () {
+                          controller.updatenotes(noteController, widget.docId);
                         },
                         child: const Text(
-                          AppStrings.updated,
-                          style: TextStyle(color: AppColors.redAlert),
+                          AppStrings.update,
+                          style: TextStyle(color: AppColors.backgroundColor),
                         )),
                     const SizedBox(
                       width: 10,
@@ -92,7 +81,7 @@ class _UpdateDataState extends State<UpdateData> {
                         },
                         child: const Text(
                           AppStrings.cancel,
-                          style: TextStyle(color: AppColors.redAlert),
+                          style: TextStyle(color: AppColors.backgroundColor),
                         )),
                   ],
                 )
