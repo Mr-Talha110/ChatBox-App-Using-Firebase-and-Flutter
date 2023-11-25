@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:note_app/screens/Settings%20screen/settings_screen.dart';
 
 import '../Calls screens/calls_screen.dart';
@@ -37,19 +38,49 @@ class _DashboardScreenState extends State<DashboardScreen> {
             },
             currentIndex: currentPage,
             type: BottomNavigationBarType.fixed,
-            items: const [
+            items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.message_rounded),
-                label: 'Messages',
+                icon: SvgPicture.asset(
+                  'assets/images/text.svg',
+                  colorFilter: currentPage == 0
+                      ? const ColorFilter.mode(
+                          Color(0xff24786D), BlendMode.srcIn)
+                      : const ColorFilter.mode(
+                          Color(0xff797C7B), BlendMode.srcIn),
+                ),
+                label: 'Message',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.call),
+                icon: SvgPicture.asset(
+                  'assets/images/Call.svg',
+                  colorFilter: currentPage == 1
+                      ? const ColorFilter.mode(
+                          Color(0xff24786D), BlendMode.srcIn)
+                      : const ColorFilter.mode(
+                          Color(0xff797C7B), BlendMode.srcIn),
+                ),
                 label: 'Calls',
               ),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person_3_rounded), label: 'Contacts'),
+                  icon: SvgPicture.asset(
+                    'assets/images/user.svg',
+                    colorFilter: currentPage == 2
+                        ? const ColorFilter.mode(
+                            Color(0xff24786D), BlendMode.srcIn)
+                        : const ColorFilter.mode(
+                            Color(0xff797C7B), BlendMode.srcIn),
+                  ),
+                  label: 'Contacts'),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.settings), label: 'Settings'),
+                  icon: SvgPicture.asset(
+                    'assets/images/settings.svg',
+                    colorFilter: currentPage == 3
+                        ? const ColorFilter.mode(
+                            Color(0xff24786D), BlendMode.srcIn)
+                        : const ColorFilter.mode(
+                            Color(0xff797C7B), BlendMode.srcIn),
+                  ),
+                  label: 'Settings'),
             ]),
         body: tabs[currentPage]);
   }
