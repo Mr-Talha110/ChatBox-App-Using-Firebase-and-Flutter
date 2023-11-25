@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/utils/strings.dart';
+
+import '../utils/constants.dart';
 
 class MyInfo extends StatelessWidget {
   const MyInfo({super.key});
@@ -10,7 +13,7 @@ class MyInfo extends StatelessWidget {
       padding: const EdgeInsets.only(left: 24, right: 24, top: 14),
       width: double.infinity,
       decoration: const BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: SingleChildScrollView(
@@ -23,17 +26,17 @@ class MyInfo extends StatelessWidget {
                 height: 3,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
-                    color: const Color(0xffe6e6e6))),
+                    color: AppColors.white)),
           ),
           const SizedBox(height: 50),
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Display Name",
+              Text(AppStrings.displayName,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff797C7B))),
+                      color: AppColors.greyColor)),
               SizedBox(height: 5),
               Text("Nazrul Islam",
                   style: TextStyle(
@@ -46,11 +49,11 @@ class MyInfo extends StatelessWidget {
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Email Address",
+              Text(AppStrings.emailAddress,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff797C7B))),
+                      color: AppColors.greyColor)),
               SizedBox(height: 5),
               Text("nazrulIslam20@gmail.com",
                   style: TextStyle(
@@ -63,11 +66,11 @@ class MyInfo extends StatelessWidget {
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Address",
+              Text(AppStrings.address,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff797C7B))),
+                      color: AppColors.greyColor)),
               SizedBox(height: 5),
               Text("33 street west subidbazar,sylhet",
                   style: TextStyle(
@@ -80,11 +83,11 @@ class MyInfo extends StatelessWidget {
           const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Phone  Number",
+              Text(AppStrings.phoneNumber,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff797C7B))),
+                      color: AppColors.greyColor)),
               SizedBox(height: 5),
               Text("(320) 555-0104",
                   style: TextStyle(
@@ -97,19 +100,19 @@ class MyInfo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Media Shared",
+              const Text(AppStrings.mediaShared,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Color(0xff797C7B))),
+                      color: AppColors.greyColor)),
               TextButton(
                   onPressed: () {},
                   child: const Text(
-                    'View All',
+                    AppStrings.viewAll,
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xff20A090)),
+                        color: AppColors.lightGreen),
                   ))
             ],
           ),

@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
 import 'package:note_app/utils/strings.dart';
 
+import '../../utils/constants.dart';
+
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
 
@@ -21,25 +23,25 @@ class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000E08),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         leadingWidth: 60,
         titleTextStyle: const TextStyle(
-          color: Colors.white,
+          color: AppColors.white,
           fontSize: 20,
           fontWeight: FontWeight.w500,
         ),
         backgroundColor: Colors.transparent,
         leading: const Icon(
           Icons.search,
-          color: Colors.white,
+          color: AppColors.white,
         ),
         title: const Text(AppStrings.contact),
         centerTitle: true,
         actions: const [
           Icon(
             Icons.person_add_alt_rounded,
-            color: Colors.white,
+            color: AppColors.white,
           ),
           SizedBox(width: 15),
         ],
@@ -54,7 +56,7 @@ class _ContactScreenState extends State<ContactScreen> {
             padding: const EdgeInsets.only(top: 14, left: 24, right: 24),
             width: double.infinity,
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40))),
@@ -67,7 +69,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     height: 3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xffe6e6e6))),
+                        color: AppColors.white)),
               ),
               const SizedBox(height: 25),
               const Text(AppStrings.myContacts,

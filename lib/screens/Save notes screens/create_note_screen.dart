@@ -7,6 +7,8 @@ import 'package:get/get.dart';
 import 'package:note_app/Widgets/update_data.dart';
 import 'package:note_app/utils/strings.dart';
 
+import '../../utils/constants.dart';
+
 class CreateNoteScreen extends StatefulWidget {
   const CreateNoteScreen({super.key});
 
@@ -21,10 +23,10 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: AppColors.backgroundColor),
         title: const Text(
           AppStrings.saveNotes,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: AppColors.backgroundColor),
         ),
       ),
       body: Container(
@@ -32,26 +34,26 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
         child: Column(
           children: [
             TextFormField(
-              cursorColor: const Color(0xff575DFB),
+              cursorColor: AppColors.greenColor,
               controller: notesController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.note_alt_sharp,
-                  color: Color(0xff575DFB),
+                  color: AppColors.greenColor,
                 ),
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff575DFB), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 hintText: AppStrings.notes,
                 hintStyle: TextStyle(
-                  color: Color(0xFFC7C7C7),
+                  color: AppColors.lightGrey,
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
                   fontFamily: 'Inter',
@@ -94,13 +96,13 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xff575DFB),
+                  color: AppColors.greenColor,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
                   AppStrings.save,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 16,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,
@@ -122,7 +124,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
                       child: CircularProgressIndicator(
-                    color: Color(0xff575DFB),
+                    color: AppColors.greenColor,
                   ));
                 }
                 if (snapshot.data!.docs.isEmpty) {
@@ -132,7 +134,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black,
+                      color: AppColors.backgroundColor,
                     ),
                   ));
                 }
@@ -148,20 +150,20 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 30),
                           decoration: BoxDecoration(
-                              color: const Color(0xff575DFB),
+                              color: AppColors.backgroundColor,
                               borderRadius: BorderRadius.circular(30)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
                                 note,
-                                style: const TextStyle(color: Colors.white),
+                                style: const TextStyle(color: AppColors.white),
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   InkWell(
-                                    splashColor: Colors.white,
+                                    splashColor: AppColors.white,
                                     onTap: () {
                                       Get.dialog(UpdateData(
                                         docId: docId,
@@ -171,7 +173,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                                     },
                                     child: const Icon(
                                       Icons.edit,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   ),
                                   const SizedBox(width: 10),
@@ -191,7 +193,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                                     },
                                     child: const Icon(
                                       Icons.delete,
-                                      color: Colors.white,
+                                      color: AppColors.white,
                                     ),
                                   )
                                 ],

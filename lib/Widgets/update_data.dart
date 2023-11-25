@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
+
+import '../utils/constants.dart';
 
 class UpdateData extends StatefulWidget {
   final dynamic note;
@@ -16,7 +19,7 @@ class _UpdateDataState extends State<UpdateData> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: AppColors.transparent,
       body: Center(
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -24,26 +27,27 @@ class _UpdateDataState extends State<UpdateData> {
           width: double.infinity,
           height: 300,
           decoration: BoxDecoration(
-              color: Colors.red, borderRadius: BorderRadius.circular(20)),
+              color: AppColors.redAlert,
+              borderRadius: BorderRadius.circular(20)),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const Text(
-                  'Edit Note',
+                  AppStrings.editNote,
                   style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.white,
                       fontSize: 20,
                       fontWeight: FontWeight.w400),
                 ),
                 TextFormField(
-                  style: const TextStyle(color: Colors.white),
+                  style: const TextStyle(color: AppColors.white),
                   controller: noteController..text = '${widget.note}',
-                  cursorColor: Colors.white,
+                  cursorColor: AppColors.white,
                   decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
+                          borderSide: BorderSide(color: AppColors.white)),
                       focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white))),
+                          borderSide: BorderSide(color: AppColors.white))),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +58,7 @@ class _UpdateDataState extends State<UpdateData> {
                                 EdgeInsets.symmetric(
                                     horizontal: 20, vertical: 10)),
                             backgroundColor:
-                                MaterialStatePropertyAll(Colors.white)),
+                                MaterialStatePropertyAll(AppColors.white)),
                         onPressed: () async {
                           await FirebaseFirestore.instance
                               .collection('notes')
@@ -67,12 +71,12 @@ class _UpdateDataState extends State<UpdateData> {
                               margin: const EdgeInsets.symmetric(
                                   horizontal: 16, vertical: 50),
                               snackPosition: SnackPosition.BOTTOM,
-                              'Note Updated',
+                              AppStrings.noteUpdated,
                               '');
                         },
                         child: const Text(
-                          'Update',
-                          style: TextStyle(color: Colors.red),
+                          AppStrings.updated,
+                          style: TextStyle(color: AppColors.redAlert),
                         )),
                     const SizedBox(
                       width: 10,
@@ -87,8 +91,8 @@ class _UpdateDataState extends State<UpdateData> {
                           Get.back();
                         },
                         child: const Text(
-                          'Cancel',
-                          style: TextStyle(color: Colors.red),
+                          AppStrings.cancel,
+                          style: TextStyle(color: AppColors.redAlert),
                         )),
                   ],
                 )

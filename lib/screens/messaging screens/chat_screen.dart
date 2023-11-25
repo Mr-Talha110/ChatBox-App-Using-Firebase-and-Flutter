@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/constants.dart';
 
 class ChatScreen extends StatefulWidget {
   final String chatId;
@@ -45,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           width: 10,
                           height: 10,
                           decoration: BoxDecoration(
-                              color: const Color(0xff0FE16D),
+                              color: AppColors.neon,
                               borderRadius: BorderRadius.circular(100)),
                         ),
                       ),
@@ -65,7 +66,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
-                              color: Color(0xff797C7B)))
+                              color: AppColors.greyColor))
                     ],
                   ),
                 ],
@@ -74,14 +75,14 @@ class _ChatScreenState extends State<ChatScreen> {
                 children: [
                   SvgPicture.asset(
                     'assets/images/Call.svg',
-                    colorFilter:
-                        const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                    colorFilter: const ColorFilter.mode(
+                        AppColors.backgroundColor, BlendMode.srcIn),
                   ),
                   const SizedBox(width: 12),
                   SvgPicture.asset(
                     'assets/images/Video.svg',
-                    colorFilter:
-                        const ColorFilter.mode(Colors.black, BlendMode.srcIn),
+                    colorFilter: const ColorFilter.mode(
+                        AppColors.backgroundColor, BlendMode.srcIn),
                   ),
                 ],
               )
@@ -107,7 +108,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    color: const Color(0xffF3F6F6),
+                    color: AppColors.white,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Row(
@@ -119,7 +120,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             hintStyle: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
-                                color: Color(0xff797C7B)),
+                                color: AppColors.greyColor),
                             border: UnderlineInputBorder(
                                 borderSide: BorderSide.none)),
                       )),

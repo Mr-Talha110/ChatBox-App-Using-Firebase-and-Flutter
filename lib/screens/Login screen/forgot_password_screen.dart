@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/constants.dart';
 import 'package:note_app/utils/strings.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
@@ -14,7 +15,7 @@ class ForgetPasswordScreen extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.backgroundColor,
         ),
         body: Container(
           alignment: Alignment.center,
@@ -26,7 +27,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               child: Text(
                 AppStrings.forgotPassword,
                 style: TextStyle(
-                  color: Color(0xff24786D),
+                  color: AppColors.greenColor,
                   fontSize: 32,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
@@ -43,7 +44,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               child: Text(
                 AppStrings.forgotDescp,
                 style: TextStyle(
-                  color: Colors.black,
+                  color: AppColors.backgroundColor,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w400,
@@ -54,26 +55,26 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             TextFormField(
-              cursorColor: const Color(0xff24786D),
+              cursorColor: AppColors.greenColor,
               controller: forgotPasswordController,
               decoration: const InputDecoration(
                 prefixIcon: Icon(
                   Icons.email,
-                  color: Color(0xff24786D),
+                  color: AppColors.greenColor,
                 ),
                 contentPadding:
                     EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff24786D), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff24786D), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 hintText: AppStrings.email,
                 hintStyle: TextStyle(
-                  color: Color(0xFFC7C7C7),
+                  color: AppColors.lightGrey,
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
                   fontFamily: 'Inter',
@@ -103,13 +104,13 @@ class ForgetPasswordScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xff24786D),
+                  color: AppColors.greenColor,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
                   AppStrings.submit,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.white,
                     fontSize: 16,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,

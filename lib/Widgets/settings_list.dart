@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/settings_list_controller.dart';
 
+import '../utils/constants.dart';
+
 class SettingsList extends StatelessWidget {
   const SettingsList({super.key});
 
@@ -38,7 +40,7 @@ class SettingsList extends StatelessWidget {
                               style: const TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0xff797C7B)))
+                                  color: AppColors.greyColor))
                         ],
                       )
                     ],

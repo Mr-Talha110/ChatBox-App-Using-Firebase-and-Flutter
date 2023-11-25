@@ -7,6 +7,8 @@ import 'package:note_app/screens/Save%20notes%20screens/create_note_screen.dart'
 import 'package:note_app/screens/messaging%20screens/chat_screen.dart';
 import 'package:note_app/utils/strings.dart';
 
+import '../../utils/constants.dart';
+
 class MessagingScreen extends StatefulWidget {
   const MessagingScreen({super.key});
 
@@ -19,30 +21,30 @@ class _MessagingScreenState extends State<MessagingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color(0xff000E08),
+        backgroundColor: AppColors.backgroundColor,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: const Color(0xff24786D),
+          backgroundColor: AppColors.greenColor,
           onPressed: () {
             Get.to(const CreateNoteScreen());
           },
           child: const Icon(
             Icons.note_alt_sharp,
-            color: Colors.white,
+            color: AppColors.white,
           ),
         ),
         appBar: AppBar(
           leadingWidth: 60,
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.transparent,
           title: const Text(AppStrings.home),
           centerTitle: true,
           titleTextStyle: const TextStyle(
-            color: Colors.white,
+            color: AppColors.white,
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
           leading: const Icon(
             Icons.search,
-            color: Colors.white,
+            color: AppColors.white,
           ),
           actions: [
             Image.asset(
@@ -74,7 +76,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                           contactList[index].name.split(' ').elementAt(0),
                           style: const TextStyle(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: AppColors.white,
                             fontWeight: FontWeight.w400,
                           ),
                         )
@@ -89,7 +91,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                 padding: const EdgeInsets.only(top: 14, left: 24, right: 24),
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                    color: Colors.white,
+                    color: AppColors.white,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40))),
@@ -101,7 +103,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                         height: 3,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: const Color(0xffe6e6e6))),
+                            color: AppColors.white)),
                   ),
                   const SizedBox(height: 25),
                   Expanded(
@@ -120,11 +122,11 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(100),
-                                          color: Colors.black),
+                                          color: AppColors.backgroundColor),
                                       child: SvgPicture.asset(
                                         'assets/images/bell.svg',
                                         colorFilter: const ColorFilter.mode(
-                                            Colors.white, BlendMode.srcIn),
+                                            AppColors.white, BlendMode.srcIn),
                                       )),
                                   Container(
                                       margin: const EdgeInsets.symmetric(
@@ -133,7 +135,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(100),
-                                          color: const Color(0xffEA3736)),
+                                          color: AppColors.redAlert),
                                       child: SvgPicture.asset(
                                           'assets/images/trash.svg')),
                                 ],
@@ -168,10 +170,8 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                                     height: 10,
                                                     decoration: BoxDecoration(
                                                         color: index % 2 == 0
-                                                            ? const Color(
-                                                                0xff9A9E9C)
-                                                            : const Color(
-                                                                0xff0FE16D),
+                                                            ? AppColors.greish
+                                                            : AppColors.neon,
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(100)),
@@ -196,8 +196,8 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                                         fontSize: 12,
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        color:
-                                                            Color(0xff797C7B)))
+                                                        color: AppColors
+                                                            .greyColor))
                                               ],
                                             ),
                                           ],
@@ -211,7 +211,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w500,
-                                                  color: Color(0xff797C7B)),
+                                                  color: AppColors.greyColor),
                                             ),
                                             const SizedBox(height: 7),
                                             index == 0 || index == 1
@@ -222,14 +222,14 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(100),
-                                                        color: const Color(
-                                                            0xffF04A4C)),
+                                                        color:
+                                                            AppColors.redAlert),
                                                     child: const Center(
                                                         child: Text(
                                                       '3',
                                                       style: TextStyle(
                                                         fontSize: 12,
-                                                        color: Colors.white,
+                                                        color: AppColors.white,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                       ),

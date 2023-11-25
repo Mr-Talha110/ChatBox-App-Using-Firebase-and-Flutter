@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'screens/Login screen/login_screen.dart';
+import 'utils/constants.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -17,7 +18,7 @@ class SplashScreen extends StatelessWidget {
           child: Text(
             'Welcome to',
             style: TextStyle(
-              color: Colors.black,
+              color: AppColors.backgroundColor,
               fontSize: 24,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w400,
@@ -32,7 +33,7 @@ class SplashScreen extends StatelessWidget {
           child: Text(
             'ChatBox',
             style: TextStyle(
-              color: Color(0xff24786D),
+              color: AppColors.greenColor,
               fontSize: 40,
               fontFamily: 'Inter',
               fontWeight: FontWeight.w700,
@@ -44,7 +45,7 @@ class SplashScreen extends StatelessWidget {
         const Text(
           'A place where you can contact with people and keep track of your expenses...',
           style: TextStyle(
-            color: Colors.black,
+            color: AppColors.backgroundColor,
             fontSize: 16,
             fontFamily: 'Inter',
             fontWeight: FontWeight.w400,
@@ -58,7 +59,7 @@ class SplashScreen extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 1.5),
+              border: Border.all(color: AppColors.backgroundColor, width: 1.5),
               borderRadius: BorderRadius.circular(16)),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Image.asset(
@@ -69,7 +70,7 @@ class SplashScreen extends StatelessWidget {
             const Text(
               'Continue with Google',
               style: TextStyle(
-                color: Color(0xFF1C1C1C),
+                color: AppColors.backgroundColor,
                 fontSize: 16,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w700,
@@ -83,13 +84,13 @@ class SplashScreen extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.black, width: 1.5),
+              border: Border.all(color: AppColors.backgroundColor, width: 1.5),
               borderRadius: BorderRadius.circular(16)),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             const Text(
               'Continue with Email',
               style: TextStyle(
-                color: Color(0xFF1C1C1C),
+                color: AppColors.backgroundColor,
                 fontSize: 16,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w700,
@@ -100,7 +101,7 @@ class SplashScreen extends StatelessWidget {
             const SizedBox(width: 10),
             Image.asset(
               'assets/images/at.png',
-              color: const Color(0xff24786D),
+              color: AppColors.greenColor,
               width: 24,
             ),
           ]),
@@ -112,7 +113,7 @@ class SplashScreen extends StatelessWidget {
             const Text(
               'Already have an account?',
               style: TextStyle(
-                color: Colors.black,
+                color: AppColors.backgroundColor,
                 fontSize: 16,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w400,
@@ -128,12 +129,12 @@ class SplashScreen extends StatelessWidget {
               child: const Text(
                 'Login',
                 style: TextStyle(
-                  color: Color(0xff24786D),
+                  color: AppColors.greenColor,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
                   decoration: TextDecoration.underline,
-                  decorationColor: Color(0xff24786D),
+                  decorationColor: AppColors.greenColor,
                   height: 0,
                   letterSpacing: -0.18,
                 ),

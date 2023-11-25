@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
 import 'package:intl/intl.dart';
+import 'package:note_app/utils/constants.dart';
 import 'package:note_app/utils/strings.dart';
 
 class CallsScreen extends StatefulWidget {
@@ -17,23 +18,23 @@ class _CallsScreenState extends State<CallsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000E08),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         leadingWidth: 60,
         centerTitle: true,
         title: const Text(
           AppStrings.calls,
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: AppColors.white),
         ),
         leading: const Icon(
           Icons.search,
-          color: Colors.white,
+          color: AppColors.white,
         ),
         backgroundColor: Colors.transparent,
         actions: const [
           Icon(
             Icons.phone,
-            color: Colors.white,
+            color: AppColors.white,
           ),
           SizedBox(width: 15),
         ],
@@ -48,7 +49,7 @@ class _CallsScreenState extends State<CallsScreen> {
             padding: const EdgeInsets.only(top: 14, left: 24, right: 24),
             width: double.infinity,
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40))),
@@ -60,7 +61,7 @@ class _CallsScreenState extends State<CallsScreen> {
                     height: 3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: const Color(0xffe6e6e6))),
+                        color: AppColors.white)),
               ),
               const SizedBox(height: 25),
               const Align(

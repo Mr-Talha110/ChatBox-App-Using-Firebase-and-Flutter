@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:note_app/utils/strings.dart';
 
 import '../../Widgets/my_info.dart';
+import '../../utils/constants.dart';
 import '../Login screen/login_screen.dart';
 
 class MyAccountScreen extends StatelessWidget {
@@ -13,22 +14,24 @@ class MyAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000E08),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         leading: IconButton(
             onPressed: () {
               Get.back();
             },
             icon: const Icon(
               Icons.arrow_back,
-              color: Colors.white,
+              color: AppColors.white,
             )),
         actions: [
           const Text(
             AppStrings.signOut,
             style: TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
+                color: AppColors.white,
+                fontSize: 16,
+                fontWeight: FontWeight.w500),
           ),
           IconButton(
               onPressed: () async {
@@ -37,7 +40,7 @@ class MyAccountScreen extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.logout_outlined,
-                color: Colors.white,
+                color: AppColors.white,
               ))
         ],
       ),
@@ -54,13 +57,13 @@ class MyAccountScreen extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
-                    color: Colors.white)),
+                    color: AppColors.white)),
             const SizedBox(height: 8),
             const Text("@jhonabraham",
                 style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xff797C7B))),
+                    color: AppColors.greyColor)),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

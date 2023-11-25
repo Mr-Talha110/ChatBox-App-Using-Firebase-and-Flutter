@@ -32,4 +32,14 @@ class AppStrings {
   static const String signOut = 'Sign out';
 
   static const String haveAccount = 'Already have an account?';
+  static const String displayName = 'Display Name';
+  static const String emailAddress = 'Email Address';
+  static const String address = 'Address';
+  static const String phoneNumber = 'Phone  Number';
+  static const String mediaShared = 'Media Shared';
+  static const String viewAll = 'Media Shared';
+  static const String editNote = 'Edit Note';
+  static const String noteUpdated = 'Note Updated';
+  static const String updated = 'Updated';
+  static const String cancel = 'Cancel';
 }

@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:note_app/screens/Settings%20screen/settings_screen.dart';
 import 'package:note_app/utils/strings.dart';
 
+import '../../utils/constants.dart';
 import '../Calls screens/calls_screen.dart';
 import '../Contact screens/contact_screen.dart';
 import '../messaging screens/messaging_screen.dart';
@@ -29,10 +30,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
     ];
     return Scaffold(
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
+            backgroundColor: AppColors.white,
             unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.w800),
             selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w800),
-            selectedItemColor: const Color(0xff24786D),
+            selectedItemColor: AppColors.greenColor,
             onTap: (index) {
               currentPage = index;
               setState(() {});
@@ -45,9 +46,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   'assets/images/text.svg',
                   colorFilter: currentPage == 0
                       ? const ColorFilter.mode(
-                          Color(0xff24786D), BlendMode.srcIn)
+                          AppColors.greenColor, BlendMode.srcIn)
                       : const ColorFilter.mode(
-                          Color(0xff797C7B), BlendMode.srcIn),
+                          AppColors.greyColor, BlendMode.srcIn),
                 ),
                 label: AppStrings.message,
               ),
@@ -56,9 +57,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   'assets/images/Call.svg',
                   colorFilter: currentPage == 1
                       ? const ColorFilter.mode(
-                          Color(0xff24786D), BlendMode.srcIn)
+                          AppColors.greenColor, BlendMode.srcIn)
                       : const ColorFilter.mode(
-                          Color(0xff797C7B), BlendMode.srcIn),
+                          AppColors.greyColor, BlendMode.srcIn),
                 ),
                 label: AppStrings.calls,
               ),
@@ -67,9 +68,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     'assets/images/user.svg',
                     colorFilter: currentPage == 2
                         ? const ColorFilter.mode(
-                            Color(0xff24786D), BlendMode.srcIn)
+                            AppColors.greenColor, BlendMode.srcIn)
                         : const ColorFilter.mode(
-                            Color(0xff797C7B), BlendMode.srcIn),
+                            AppColors.greyColor, BlendMode.srcIn),
                   ),
                   label: AppStrings.contact),
               BottomNavigationBarItem(
@@ -77,9 +78,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     'assets/images/settings.svg',
                     colorFilter: currentPage == 3
                         ? const ColorFilter.mode(
-                            Color(0xff24786D), BlendMode.srcIn)
+                            AppColors.greenColor, BlendMode.srcIn)
                         : const ColorFilter.mode(
-                            Color(0xff797C7B), BlendMode.srcIn),
+                            AppColors.greyColor, BlendMode.srcIn),
                   ),
                   label: AppStrings.settings),
             ]),

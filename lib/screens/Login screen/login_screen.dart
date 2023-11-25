@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/constants.dart';
 
 import '../Dashobard screen/dashboardScreen.dart';
 import '../Register screen/signup_screen.dart';
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Text(
               'Login',
               style: TextStyle(
-                color: Color(0xff24786D),
+                color: AppColors.greenColor,
                 fontSize: 32,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w700,
@@ -50,7 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Text(
               'Login now to contact with people and track all your expenses & income at a place!',
               style: TextStyle(
-                color: Colors.black,
+                color: AppColors.backgroundColor,
                 fontSize: 16,
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w400,
@@ -61,24 +62,26 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           const SizedBox(height: 40),
           TextFormField(
-            cursorColor: const Color(0xff24786D),
+            cursorColor: AppColors.greenColor,
             controller: loginEmailController,
             decoration: const InputDecoration(
               prefixIcon: Icon(
                 Icons.email,
-                color: Color(0xff24786D),
+                color: AppColors.greenColor,
               ),
               contentPadding:
                   EdgeInsets.symmetric(horizontal: 24, vertical: 16),
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(color: Color(0xff24786D), width: 1.5)),
+                  borderSide:
+                      BorderSide(color: AppColors.greenColor, width: 1.5)),
               focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(16)),
-                  borderSide: BorderSide(color: Color(0xff24786D), width: 1.5)),
+                  borderSide:
+                      BorderSide(color: AppColors.greenColor, width: 1.5)),
               hintText: 'Email',
               hintStyle: TextStyle(
-                color: Color(0xFFC7C7C7),
+                color: AppColors.lightGrey,
                 fontSize: 16,
                 fontStyle: FontStyle.italic,
                 fontFamily: 'Inter',
@@ -93,26 +96,26 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           TextFormField(
             obscureText: !showPassword,
-            cursorColor: const Color(0xff24786D),
+            cursorColor: AppColors.greenColor,
             controller: loginPasswordController,
             decoration: InputDecoration(
                 prefixIcon: const Icon(
                   Icons.lock,
-                  color: Color(0xff24786D),
+                  color: AppColors.greenColor,
                 ),
                 contentPadding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                 enabledBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff24786D), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 focusedBorder: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
-                        BorderSide(color: Color(0xff24786D), width: 1.5)),
+                        BorderSide(color: AppColors.greenColor, width: 1.5)),
                 hintText: 'Password',
                 hintStyle: const TextStyle(
-                  color: Color(0xFFC7C7C7),
+                  color: AppColors.lightGrey,
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
                   fontFamily: 'Inter',
@@ -129,11 +132,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     icon: showPassword
                         ? const Icon(
                             Icons.visibility_off,
-                            color: Color(0xff24786D),
+                            color: AppColors.greenColor,
                           )
                         : const Icon(
                             Icons.visibility,
-                            color: Color(0xff24786D),
+                            color: AppColors.greenColor,
                           ))),
           ),
           Align(
@@ -147,12 +150,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: const Text(
                   'Forgot password?',
                   style: TextStyle(
-                    color: Color(0xff24786D),
+                    color: AppColors.greenColor,
                     fontSize: 12,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xff24786D),
+                    decorationColor: AppColors.greenColor,
                     height: 0.17,
                     letterSpacing: -0.13,
                   ),
@@ -183,13 +186,13 @@ class _LoginScreenState extends State<LoginScreen> {
               padding: const EdgeInsets.symmetric(vertical: 20),
               width: double.infinity,
               decoration: BoxDecoration(
-                color: const Color(0xff24786D),
+                color: AppColors.greenColor,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Text(
                 'Login',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.white,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
@@ -198,14 +201,15 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
           const SizedBox(height: 20),
-          const Divider(color: Colors.black, thickness: 1.5),
+          const Divider(color: AppColors.backgroundColor, thickness: 1.5),
           const SizedBox(height: 20),
           Container(
             margin: const EdgeInsets.only(bottom: 10),
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 16),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 1.5),
+                border:
+                    Border.all(color: AppColors.backgroundColor, width: 1.5),
                 borderRadius: BorderRadius.circular(16)),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
@@ -216,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const Text(
                 'Continue with Google',
                 style: TextStyle(
-                  color: Color(0xFF1C1C1C),
+                  color: AppColors.backgroundColor,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w700,
@@ -233,7 +237,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const Text(
                 'Don\'t have an account?',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: AppColors.backgroundColor,
                   fontSize: 16,
                   fontFamily: 'Inter',
                   fontWeight: FontWeight.w400,
@@ -251,12 +255,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: const Text(
                   'Register',
                   style: TextStyle(
-                    color: Color(0xff24786D),
+                    color: AppColors.greenColor,
                     fontSize: 16,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w700,
                     decoration: TextDecoration.underline,
-                    decorationColor: Color(0xff24786D),
+                    decorationColor: AppColors.greenColor,
                     height: 0,
                     letterSpacing: -0.18,
                   ),

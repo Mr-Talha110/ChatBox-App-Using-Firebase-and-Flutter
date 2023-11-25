@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:note_app/utils/strings.dart';
 
 import '../../Widgets/settings_list.dart';
+import '../../utils/constants.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -16,12 +17,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff000E08),
+      backgroundColor: AppColors.backgroundColor,
       appBar: AppBar(
         centerTitle: true,
         titleTextStyle: const TextStyle(
-            fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
-        backgroundColor: Colors.transparent,
+            fontSize: 20, fontWeight: FontWeight.w500, color: AppColors.white),
+        backgroundColor: AppColors.transparent,
         title: const Text(
           AppStrings.settings,
         ),
@@ -33,7 +34,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
             width: double.infinity,
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40),
                     topRight: Radius.circular(40))),
@@ -43,7 +44,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   height: 3,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: const Color(0xffe6e6e6))),
+                      color: AppColors.white)),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +96,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ],
               ),
               const SizedBox(height: 20),
-              const Divider(color: Color(0xffF5F6F6)),
+              const Divider(color: AppColors.white),
               const SizedBox(height: 20),
               const SettingsList(),
             ]),
