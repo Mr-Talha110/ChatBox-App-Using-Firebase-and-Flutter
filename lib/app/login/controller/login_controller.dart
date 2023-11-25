@@ -8,6 +8,11 @@ import '../../signup/views/signup_screen.dart';
 import '../views/forgot_password_screen.dart';
 
 class LoginController extends GetxController {
+  RxBool showPassword = false.obs;
+  hidePassword() {
+    showPassword.value = !showPassword.value;
+  }
+
   gotoforgotpasswordscreen() {
     Get.to(const ForgetPasswordScreen());
   }

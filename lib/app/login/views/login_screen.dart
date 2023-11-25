@@ -17,7 +17,6 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController loginEmailController = TextEditingController();
   TextEditingController loginPasswordController = TextEditingController();
   final controller = Get.put(LoginController());
-  bool showPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,50 +91,50 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 20,
           ),
-          TextFormField(
-            obscureText: !showPassword,
-            cursorColor: AppColors.greenColor,
-            controller: loginPasswordController,
-            decoration: InputDecoration(
-                prefixIcon: const Icon(
-                  Icons.lock,
-                  color: AppColors.greenColor,
-                ),
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-                enabledBorder: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    borderSide:
-                        BorderSide(color: AppColors.greenColor, width: 1.5)),
-                focusedBorder: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(16)),
-                    borderSide:
-                        BorderSide(color: AppColors.greenColor, width: 1.5)),
-                hintText: AppStrings.password,
-                hintStyle: const TextStyle(
-                  color: AppColors.lightGrey,
-                  fontSize: 16,
-                  fontStyle: FontStyle.italic,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w400,
-                  height: 0.09,
-                  letterSpacing: -0.18,
-                ),
-                suffixIcon: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        showPassword = !showPassword;
-                      });
-                    },
-                    icon: showPassword
-                        ? const Icon(
-                            Icons.visibility_off,
-                            color: AppColors.greenColor,
-                          )
-                        : const Icon(
-                            Icons.visibility,
-                            color: AppColors.greenColor,
-                          ))),
+          Obx(
+            () => TextFormField(
+              obscureText: !controller.showPassword.value,
+              cursorColor: AppColors.greenColor,
+              controller: loginPasswordController,
+              decoration: InputDecoration(
+                  prefixIcon: const Icon(
+                    Icons.lock,
+                    color: AppColors.greenColor,
+                  ),
+                  contentPadding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  enabledBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      borderSide:
+                          BorderSide(color: AppColors.greenColor, width: 1.5)),
+                  focusedBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                      borderSide:
+                          BorderSide(color: AppColors.greenColor, width: 1.5)),
+                  hintText: AppStrings.password,
+                  hintStyle: const TextStyle(
+                    color: AppColors.lightGrey,
+                    fontSize: 16,
+                    fontStyle: FontStyle.italic,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                    height: 0.09,
+                    letterSpacing: -0.18,
+                  ),
+                  suffixIcon: IconButton(
+                      onPressed: () {
+                        controller.hidePassword();
+                      },
+                      icon: controller.showPassword.value
+                          ? const Icon(
+                              Icons.visibility_off,
+                              color: AppColors.greenColor,
+                            )
+                          : const Icon(
+                              Icons.visibility,
+                              color: AppColors.greenColor,
+                            ))),
+            ),
           ),
           Align(
             alignment: Alignment.centerLeft,

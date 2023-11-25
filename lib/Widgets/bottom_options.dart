@@ -27,7 +27,7 @@ class _BottomOptionsState extends State<BottomOptions> {
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: Column(children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             IconButton(
                 onPressed: () {

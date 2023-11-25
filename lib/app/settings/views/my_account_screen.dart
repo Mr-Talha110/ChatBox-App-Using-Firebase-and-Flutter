@@ -23,13 +23,15 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.transparent,
         leading: IconButton(
-            onPressed: () {
-              controller.goBack();
-            },
-            icon: const Icon(
-              Icons.arrow_back,
-              color: AppColors.white,
-            )),
+          onPressed: () {
+            controller.goBack();
+          },
+          icon: SvgPicture.asset(
+            AssetRef.backArrow,
+            colorFilter:
+                const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+          ),
+        ),
         actions: [
           const Text(
             AppStrings.signOut,
