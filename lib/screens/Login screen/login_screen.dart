@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/utils/constants.dart';
+import 'package:note_app/utils/strings.dart';
 
 import '../Dashobard screen/dashboardScreen.dart';
 import '../Register screen/signup_screen.dart';
@@ -49,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
           const Align(
             alignment: Alignment.centerLeft,
             child: Text(
-              'Login now to contact with people and track all your expenses & income at a place!',
+              AppStrings.loginDescp,
               style: TextStyle(
                 color: AppColors.backgroundColor,
                 fontSize: 16,
@@ -79,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(16)),
                   borderSide:
                       BorderSide(color: AppColors.greenColor, width: 1.5)),
-              hintText: 'Email',
+              hintText: AppStrings.email,
               hintStyle: TextStyle(
                 color: AppColors.lightGrey,
                 fontSize: 16,
@@ -113,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
                         BorderSide(color: AppColors.greenColor, width: 1.5)),
-                hintText: 'Password',
+                hintText: AppStrings.password,
                 hintStyle: const TextStyle(
                   color: AppColors.lightGrey,
                   fontSize: 16,
@@ -148,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Get.to(const ForgetPasswordScreen());
                 },
                 child: const Text(
-                  'Forgot password?',
+                  AppStrings.forgotPassword,
                   style: TextStyle(
                     color: AppColors.greenColor,
                     fontSize: 12,
@@ -190,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: const Text(
-                'Login',
+                AppStrings.login,
                 style: TextStyle(
                   color: AppColors.white,
                   fontSize: 16,
@@ -213,12 +214,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.circular(16)),
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
-                'assets/images/google.png',
+                AssetRef.google,
                 width: 24,
               ),
               const SizedBox(width: 10),
               const Text(
-                'Continue with Google',
+                AppStrings.continueWithGoogle,
                 style: TextStyle(
                   color: AppColors.backgroundColor,
                   fontSize: 16,
@@ -235,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Don\'t have an account?',
+                AppStrings.dontHaveAccount,
                 style: TextStyle(
                   color: AppColors.backgroundColor,
                   fontSize: 16,
@@ -253,7 +254,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Get.to(const SingupScreen());
                 },
                 child: const Text(
-                  'Register',
+                  AppStrings.register,
                   style: TextStyle(
                     color: AppColors.greenColor,
                     fontSize: 16,

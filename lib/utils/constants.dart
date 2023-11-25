@@ -11,4 +11,31 @@ class AppColors {
   static const Color greish = Color(0xff9A9E9C);
   static const Color lightGreen = Color(0xff20A090);
   static const Color lightGrey = Color(0xFFC7C7C7);
+  static const Color dotGrey = Color(0xffE6E6E6);
+}
+
+class AssetRef {
+  static const String receiveCall = 'assets/images/receivecall.svg';
+  static const String madeCall = 'assets/images/madecall.svg';
+  static const String phone = 'assets/images/Call.svg';
+  static const String videoCall = 'assets/images/Video.svg';
+  static const String text = 'assets/images/text.svg';
+  static const String contact = 'assets/images/user.svg';
+  static const String settings = 'assets/images/settings.svg';
+  static const String google = 'assets/images/google.png';
+  static const String backArrow = 'assets/images/Back.svg';
+  static const String user = 'assets/images/me.png';
+  static const String files = 'assets/images/files.svg';
+  static const String camera = 'assets/images/camera.svg';
+  static const String microphone = 'assets/images/microphone.svg';
+  static const String docs = 'assets/images/doc.svg';
+  static const String bell = 'assets/images/bell.svg';
+  static const String bin = 'assets/images/trash.svg';
+  static const String messageIcon = 'assets/images/message.svg';
+  static const String videoCallICon = 'assets/images/videocall.svg';
+  static const String voiceCallIcon = 'assets/images/voicecall.svg';
+  static const String optionIcon = 'assets/images/options.svg';
+  static const String qrCode = 'assets/images/qr.png';
+  static const String qrCodeIcon = 'assets/images/qr.svg';
+  static const String atLogo = 'assets/images/at.png';
 }

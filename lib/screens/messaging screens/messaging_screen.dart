@@ -23,15 +23,15 @@ class _MessagingScreenState extends State<MessagingScreen> {
     return Scaffold(
         backgroundColor: AppColors.backgroundColor,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: AppColors.greenColor,
-          onPressed: () {
-            Get.to(const CreateNoteScreen());
-          },
-          child: const Icon(
-            Icons.note_alt_sharp,
-            color: AppColors.white,
-          ),
-        ),
+            backgroundColor: AppColors.greenColor,
+            onPressed: () {
+              Get.to(const CreateNoteScreen());
+            },
+            child: SvgPicture.asset(
+              AssetRef.docs,
+              colorFilter:
+                  const ColorFilter.mode(AppColors.white, BlendMode.srcIn),
+            )),
         appBar: AppBar(
           leadingWidth: 60,
           backgroundColor: AppColors.transparent,
@@ -48,7 +48,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
           ),
           actions: [
             Image.asset(
-              'assets/images/me.png',
+              AssetRef.user,
               width: 44,
             ),
             const SizedBox(width: 15),
@@ -103,7 +103,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                         height: 3,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100),
-                            color: AppColors.white)),
+                            color: AppColors.dotGrey)),
                   ),
                   const SizedBox(height: 25),
                   Expanded(
@@ -124,7 +124,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                               BorderRadius.circular(100),
                                           color: AppColors.backgroundColor),
                                       child: SvgPicture.asset(
-                                        'assets/images/bell.svg',
+                                        AssetRef.bell,
                                         colorFilter: const ColorFilter.mode(
                                             AppColors.white, BlendMode.srcIn),
                                       )),
@@ -136,8 +136,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                           borderRadius:
                                               BorderRadius.circular(100),
                                           color: AppColors.redAlert),
-                                      child: SvgPicture.asset(
-                                          'assets/images/trash.svg')),
+                                      child: SvgPicture.asset(AssetRef.bin)),
                                 ],
                               ),
                               child: InkWell(

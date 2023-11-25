@@ -69,7 +69,7 @@ class _ContactScreenState extends State<ContactScreen> {
                     height: 3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: AppColors.white)),
+                        color: AppColors.dotGrey)),
               ),
               const SizedBox(height: 25),
               const Text(AppStrings.myContacts,

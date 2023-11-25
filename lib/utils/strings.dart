@@ -42,4 +42,16 @@ class AppStrings {
   static const String noteUpdated = 'Note Updated';
   static const String updated = 'Updated';
   static const String cancel = 'Cancel';
+  static const String continueWithGoogle = 'Continue with Google';
+  static const String continueWithEmail = 'Continue with Email';
+  static const String dontHaveAccount = 'Don\'t have an account?';
+  static const String activeNow = 'Active now';
+  static const String writeMessage = 'Write your message';
+  static const String welcomeTo = 'Welcome to';
+  static const String chatBox = 'ChatBox';
+  static const String welcomeScreenDescp =
+      'A place where you can contact with people and keep track of your expenses...';
+
+  static const String loginDescp =
+      'Login now to contact with people and track all your expenses & income at a place!';
 }

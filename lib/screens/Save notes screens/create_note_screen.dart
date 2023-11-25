@@ -150,8 +150,8 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 20, vertical: 30),
                           decoration: BoxDecoration(
-                              color: AppColors.backgroundColor,
-                              borderRadius: BorderRadius.circular(30)),
+                              color: AppColors.greenColor,
+                              borderRadius: BorderRadius.circular(16)),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

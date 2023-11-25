@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
 
-import 'screens/Login screen/login_screen.dart';
-import 'utils/constants.dart';
+import '../Login screen/login_screen.dart';
+import '../../utils/constants.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -16,7 +17,7 @@ class SplashScreen extends StatelessWidget {
         const Align(
           alignment: Alignment.topLeft,
           child: Text(
-            'Welcome to',
+            AppStrings.welcomeTo,
             style: TextStyle(
               color: AppColors.backgroundColor,
               fontSize: 24,
@@ -31,7 +32,7 @@ class SplashScreen extends StatelessWidget {
         const Align(
           alignment: Alignment.topLeft,
           child: Text(
-            'ChatBox',
+            AppStrings.chatBox,
             style: TextStyle(
               color: AppColors.greenColor,
               fontSize: 40,
@@ -43,7 +44,7 @@ class SplashScreen extends StatelessWidget {
           ),
         ),
         const Text(
-          'A place where you can contact with people and keep track of your expenses...',
+          AppStrings.welcomeScreenDescp,
           style: TextStyle(
             color: AppColors.backgroundColor,
             fontSize: 16,
@@ -63,12 +64,12 @@ class SplashScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16)),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Image.asset(
-              'assets/images/google.png',
+              AssetRef.google,
               width: 24,
             ),
             const SizedBox(width: 10),
             const Text(
-              'Continue with Google',
+              AppStrings.continueWithGoogle,
               style: TextStyle(
                 color: AppColors.backgroundColor,
                 fontSize: 16,
@@ -88,7 +89,7 @@ class SplashScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(16)),
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             const Text(
-              'Continue with Email',
+              AppStrings.continueWithEmail,
               style: TextStyle(
                 color: AppColors.backgroundColor,
                 fontSize: 16,
@@ -100,7 +101,7 @@ class SplashScreen extends StatelessWidget {
             ),
             const SizedBox(width: 10),
             Image.asset(
-              'assets/images/at.png',
+              AssetRef.atLogo,
               color: AppColors.greenColor,
               width: 24,
             ),
@@ -111,7 +112,7 @@ class SplashScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'Already have an account?',
+              AppStrings.haveAccount,
               style: TextStyle(
                 color: AppColors.backgroundColor,
                 fontSize: 16,
@@ -127,7 +128,7 @@ class SplashScreen extends StatelessWidget {
                 Get.offAll(const LoginScreen());
               },
               child: const Text(
-                'Login',
+                AppStrings.login,
                 style: TextStyle(
                   color: AppColors.greenColor,
                   fontSize: 16,

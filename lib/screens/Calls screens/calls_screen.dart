@@ -61,7 +61,7 @@ class _CallsScreenState extends State<CallsScreen> {
                     height: 3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(100),
-                        color: AppColors.white)),
+                        color: AppColors.dotGrey)),
               ),
               const SizedBox(height: 25),
               const Align(
@@ -106,8 +106,8 @@ class _CallsScreenState extends State<CallsScreen> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           SvgPicture.asset(index % 2 == 0
-                                              ? 'assets/images/receivecall.svg'
-                                              : 'assets/images/madecall.svg'),
+                                              ? AssetRef.receiveCall
+                                              : AssetRef.madeCall),
                                           const SizedBox(width: 5),
                                           Text(formattedDate)
                                         ],
@@ -118,9 +118,9 @@ class _CallsScreenState extends State<CallsScreen> {
                               ),
                               Row(
                                 children: [
-                                  SvgPicture.asset('assets/images/Call.svg'),
+                                  SvgPicture.asset(AssetRef.phone),
                                   const SizedBox(width: 15),
-                                  SvgPicture.asset('assets/images/Video.svg'),
+                                  SvgPicture.asset(AssetRef.videoCall),
                                 ],
                               )
                             ],

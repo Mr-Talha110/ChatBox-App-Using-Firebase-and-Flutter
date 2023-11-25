@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:note_app/splash_screen.dart';
+import 'package:note_app/screens/Splash%20Screen/splash_screen.dart';
 import 'firebase_options.dart';
 import 'screens/Dashobard screen/dashboardScreen.dart';
 

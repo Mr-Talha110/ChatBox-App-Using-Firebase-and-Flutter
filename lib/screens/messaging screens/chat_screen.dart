@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/utils/constants.dart';
+import 'package:note_app/utils/strings.dart';
 
 class ChatScreen extends StatefulWidget {
   final String chatId;
@@ -31,12 +32,12 @@ class _ChatScreenState extends State<ChatScreen> {
                       onTap: () {
                         Get.back();
                       },
-                      child: SvgPicture.asset('assets/images/Back.svg')),
+                      child: SvgPicture.asset(AssetRef.backArrow)),
                   const SizedBox(width: 10),
                   Stack(
                     children: [
                       Image.asset(
-                        'assets/images/me.png',
+                        AssetRef.user,
                         width: 44,
                       ),
                       Positioned(
@@ -62,7 +63,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           )),
-                      Text("Active now",
+                      Text(AppStrings.activeNow,
                           style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
@@ -74,13 +75,13 @@ class _ChatScreenState extends State<ChatScreen> {
               Row(
                 children: [
                   SvgPicture.asset(
-                    'assets/images/Call.svg',
+                    AssetRef.phone,
                     colorFilter: const ColorFilter.mode(
                         AppColors.backgroundColor, BlendMode.srcIn),
                   ),
                   const SizedBox(width: 12),
                   SvgPicture.asset(
-                    'assets/images/Video.svg',
+                    AssetRef.videoCall,
                     colorFilter: const ColorFilter.mode(
                         AppColors.backgroundColor, BlendMode.srcIn),
                   ),
@@ -116,7 +117,7 @@ class _ChatScreenState extends State<ChatScreen> {
                       Expanded(
                           child: TextFormField(
                         decoration: const InputDecoration(
-                            hintText: 'Write your message',
+                            hintText: AppStrings.writeMessage,
                             hintStyle: TextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w500,
@@ -124,15 +125,15 @@ class _ChatScreenState extends State<ChatScreen> {
                             border: UnderlineInputBorder(
                                 borderSide: BorderSide.none)),
                       )),
-                      SvgPicture.asset('assets/images/files.svg'),
+                      SvgPicture.asset(AssetRef.files),
                     ],
                   ),
                 ),
               ),
               const SizedBox(width: 12),
-              SvgPicture.asset('assets/images/camera.svg'),
+              SvgPicture.asset(AssetRef.camera),
               const SizedBox(width: 12),
-              SvgPicture.asset('assets/images/microphone.svg'),
+              SvgPicture.asset(AssetRef.microphone),
             ],
           ),
         )

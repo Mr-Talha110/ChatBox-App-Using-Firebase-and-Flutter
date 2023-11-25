@@ -49,7 +49,7 @@ class MyAccountScreen extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              'assets/images/person.png',
+              AssetRef.user,
               width: 82,
             ),
             const SizedBox(height: 10),
@@ -69,19 +69,19 @@ class MyAccountScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SvgPicture.asset(
-                  'assets/images/message.svg',
+                  AssetRef.messageIcon,
                   width: 50,
                 ),
                 SvgPicture.asset(
-                  'assets/images/videocall.svg',
+                  AssetRef.videoCallICon,
                   width: 50,
                 ),
                 SvgPicture.asset(
-                  'assets/images/voicecall.svg',
+                  AssetRef.voiceCallIcon,
                   width: 50,
                 ),
                 SvgPicture.asset(
-                  'assets/images/options.svg',
+                  AssetRef.optionIcon,
                   width: 50,
                 ),
               ],

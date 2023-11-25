@@ -43,7 +43,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             items: [
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/text.svg',
+                  AssetRef.text,
                   colorFilter: currentPage == 0
                       ? const ColorFilter.mode(
                           AppColors.greenColor, BlendMode.srcIn)
@@ -54,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
-                  'assets/images/Call.svg',
+                  AssetRef.phone,
                   colorFilter: currentPage == 1
                       ? const ColorFilter.mode(
                           AppColors.greenColor, BlendMode.srcIn)
@@ -65,7 +65,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    'assets/images/user.svg',
+                    AssetRef.contact,
                     colorFilter: currentPage == 2
                         ? const ColorFilter.mode(
                             AppColors.greenColor, BlendMode.srcIn)
@@ -75,7 +75,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   label: AppStrings.contact),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    'assets/images/settings.svg',
+                    AssetRef.settings,
                     colorFilter: currentPage == 3
                         ? const ColorFilter.mode(
                             AppColors.greenColor, BlendMode.srcIn)

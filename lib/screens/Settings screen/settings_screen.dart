@@ -44,7 +44,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   height: 3,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: AppColors.white)),
+                      color: AppColors.dotGrey)),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Row(
                     children: [
                       Image.asset(
-                        'assets/images/person.png',
+                        AssetRef.user,
                         width: 60,
                       ),
                       const SizedBox(width: 12),
@@ -82,7 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Image.asset(
-                              'assets/images/qr.png',
+                              AssetRef.qrCode,
                               width: 250,
                             )
                           ],
@@ -90,7 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       ));
                     },
                     child: SvgPicture.asset(
-                      'assets/images/qr.svg',
+                      AssetRef.qrCodeIcon,
                     ),
                   )
                 ],
