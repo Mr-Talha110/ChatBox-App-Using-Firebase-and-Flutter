@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:note_app/screens/Settings%20screen/settings_screen.dart';
+import 'package:note_app/utils/strings.dart';
 
 import '../Calls screens/calls_screen.dart';
 import '../Contact screens/contact_screen.dart';
@@ -48,7 +49,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       : const ColorFilter.mode(
                           Color(0xff797C7B), BlendMode.srcIn),
                 ),
-                label: 'Message',
+                label: AppStrings.message,
               ),
               BottomNavigationBarItem(
                 icon: SvgPicture.asset(
@@ -59,7 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       : const ColorFilter.mode(
                           Color(0xff797C7B), BlendMode.srcIn),
                 ),
-                label: 'Calls',
+                label: AppStrings.calls,
               ),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(
@@ -70,7 +71,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         : const ColorFilter.mode(
                             Color(0xff797C7B), BlendMode.srcIn),
                   ),
-                  label: 'Contacts'),
+                  label: AppStrings.contact),
               BottomNavigationBarItem(
                   icon: SvgPicture.asset(
                     'assets/images/settings.svg',
@@ -80,7 +81,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         : const ColorFilter.mode(
                             Color(0xff797C7B), BlendMode.srcIn),
                   ),
-                  label: 'Settings'),
+                  label: AppStrings.settings),
             ]),
         body: tabs[currentPage]);
   }

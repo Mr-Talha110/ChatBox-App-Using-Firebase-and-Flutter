@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
 
 import '../../Widgets/my_info.dart';
 import '../Login screen/login_screen.dart';
@@ -25,7 +26,7 @@ class MyAccountScreen extends StatelessWidget {
             )),
         actions: [
           const Text(
-            'Sign out',
+            AppStrings.signOut,
             style: TextStyle(
                 color: Colors.white, fontSize: 16, fontWeight: FontWeight.w500),
           ),

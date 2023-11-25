@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
 import 'package:note_app/screens/Save%20notes%20screens/create_note_screen.dart';
 import 'package:note_app/screens/messaging%20screens/chat_screen.dart';
+import 'package:note_app/utils/strings.dart';
 
 class MessagingScreen extends StatefulWidget {
   const MessagingScreen({super.key});
@@ -32,7 +33,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
         appBar: AppBar(
           leadingWidth: 60,
           backgroundColor: Colors.transparent,
-          title: const Text('Home'),
+          title: const Text(AppStrings.home),
           centerTitle: true,
           titleTextStyle: const TextStyle(
             color: Colors.white,
@@ -190,7 +191,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
-                                                const Text("How are you today?",
+                                                const Text(AppStrings.dummyMsg,
                                                     style: TextStyle(
                                                         fontSize: 12,
                                                         fontWeight:
@@ -206,7 +207,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                               CrossAxisAlignment.end,
                                           children: [
                                             const Text(
-                                              '2 min ago',
+                                              AppStrings.dummyTime,
                                               style: TextStyle(
                                                   fontSize: 12,
                                                   fontWeight: FontWeight.w500,

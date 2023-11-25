@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
+import 'package:note_app/utils/strings.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -33,7 +34,7 @@ class _ContactScreenState extends State<ContactScreen> {
           Icons.search,
           color: Colors.white,
         ),
-        title: const Text('Contacts'),
+        title: const Text(AppStrings.contact),
         centerTitle: true,
         actions: const [
           Icon(
@@ -69,7 +70,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         color: const Color(0xffe6e6e6))),
               ),
               const SizedBox(height: 25),
-              const Text("My Contacts",
+              const Text(AppStrings.myContacts,
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,

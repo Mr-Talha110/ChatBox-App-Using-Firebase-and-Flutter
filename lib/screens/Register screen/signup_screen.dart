@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
 
 import '../../services/signUpServices.dart';
 
@@ -42,7 +43,7 @@ class _SingupScreenState extends State<SingupScreen> {
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Register',
+                  AppStrings.register,
                   style: TextStyle(
                     color: Color(0xff24786D),
                     fontSize: 32,
@@ -59,7 +60,7 @@ class _SingupScreenState extends State<SingupScreen> {
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Create an account to access all the features!',
+                  AppStrings.registerDescp,
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
@@ -89,7 +90,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff24786D), width: 1.5)),
-                  hintText: 'Name',
+                  hintText: AppStrings.name,
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -120,7 +121,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff24786D), width: 1.5)),
-                  hintText: 'Username',
+                  hintText: AppStrings.userName,
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -151,7 +152,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff24786D), width: 1.5)),
-                  hintText: 'Phone',
+                  hintText: AppStrings.phone,
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -182,7 +183,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                       borderSide:
                           BorderSide(color: Color(0xff24786D), width: 1.5)),
-                  hintText: 'Email',
+                  hintText: AppStrings.email,
                   hintStyle: TextStyle(
                     color: Color(0xFFC7C7C7),
                     fontSize: 16,
@@ -214,7 +215,7 @@ class _SingupScreenState extends State<SingupScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(16)),
                         borderSide:
                             BorderSide(color: Color(0xff24786D), width: 1.5)),
-                    hintText: 'Password',
+                    hintText: AppStrings.password,
                     hintStyle: const TextStyle(
                       color: Color(0xFFC7C7C7),
                       fontSize: 16,
@@ -265,7 +266,7 @@ class _SingupScreenState extends State<SingupScreen> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: const Text(
-                    'Register',
+                    AppStrings.register,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -280,7 +281,7 @@ class _SingupScreenState extends State<SingupScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    'Already have an account?',
+                    AppStrings.haveAccount,
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 16,
@@ -296,7 +297,7 @@ class _SingupScreenState extends State<SingupScreen> {
                       Get.back();
                     },
                     child: const Text(
-                      'Login',
+                      AppStrings.login,
                       style: TextStyle(
                         color: Color(0xff24786D),
                         fontSize: 16,

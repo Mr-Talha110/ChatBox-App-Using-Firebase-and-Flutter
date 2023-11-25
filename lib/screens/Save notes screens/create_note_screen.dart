@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/Widgets/update_data.dart';
+import 'package:note_app/utils/strings.dart';
 
 class CreateNoteScreen extends StatefulWidget {
   const CreateNoteScreen({super.key});
@@ -22,7 +23,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         title: const Text(
-          'Save Your Notes here',
+          AppStrings.saveNotes,
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -48,7 +49,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
                         BorderSide(color: Color(0xff575DFB), width: 1.5)),
-                hintText: 'Notes',
+                hintText: AppStrings.notes,
                 hintStyle: TextStyle(
                   color: Color(0xFFC7C7C7),
                   fontSize: 16,
@@ -80,7 +81,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 16, vertical: 50),
                           snackPosition: SnackPosition.BOTTOM,
-                          'Note Saved',
+                          AppStrings.notesSaved,
                           '');
                     });
                   } catch (e) {
@@ -97,7 +98,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
-                  'Save',
+                  AppStrings.save,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -116,7 +117,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                   .snapshots(),
               builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
                 if (snapshot.hasError) {
-                  return const Text('Erorr Occurred');
+                  return const Text(AppStrings.errorOccured);
                 }
                 if (snapshot.connectionState == ConnectionState.waiting) {
                   return const Center(
@@ -127,7 +128,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                 if (snapshot.data!.docs.isEmpty) {
                   return const Center(
                       child: Text(
-                    'No Data Available',
+                    AppStrings.dataNotAvailable,
                     style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -185,7 +186,7 @@ class _CreateNoteScreenState extends State<CreateNoteScreen> {
                                           margin: const EdgeInsets.symmetric(
                                               horizontal: 16, vertical: 50),
                                           snackPosition: SnackPosition.BOTTOM,
-                                          'Note Deleted',
+                                          AppStrings.notesDel,
                                           '');
                                     },
                                     child: const Icon(

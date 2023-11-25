@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/controller/contact_list_controller.dart';
 import 'package:intl/intl.dart';
+import 'package:note_app/utils/strings.dart';
 
 class CallsScreen extends StatefulWidget {
   const CallsScreen({super.key});
@@ -21,7 +22,7 @@ class _CallsScreenState extends State<CallsScreen> {
         leadingWidth: 60,
         centerTitle: true,
         title: const Text(
-          'Calls',
+          AppStrings.calls,
           style: TextStyle(color: Colors.white),
         ),
         leading: const Icon(
@@ -64,7 +65,7 @@ class _CallsScreenState extends State<CallsScreen> {
               const SizedBox(height: 25),
               const Align(
                 alignment: Alignment.topLeft,
-                child: Text("Recent",
+                child: Text(AppStrings.recent,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,

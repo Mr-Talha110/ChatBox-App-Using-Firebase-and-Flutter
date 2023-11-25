@@ -3,6 +3,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
@@ -23,7 +24,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Forgot Password?',
+                AppStrings.forgotPassword,
                 style: TextStyle(
                   color: Color(0xff24786D),
                   fontSize: 32,
@@ -40,7 +41,7 @@ class ForgetPasswordScreen extends StatelessWidget {
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                'Recover you password if you have forgot the password!',
+                AppStrings.forgotDescp,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -70,7 +71,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.circular(16)),
                     borderSide:
                         BorderSide(color: Color(0xff24786D), width: 1.5)),
-                hintText: 'Email',
+                hintText: AppStrings.email,
                 hintStyle: TextStyle(
                   color: Color(0xFFC7C7C7),
                   fontSize: 16,
@@ -106,7 +107,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: const Text(
-                  'Submit',
+                  AppStrings.submit,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,

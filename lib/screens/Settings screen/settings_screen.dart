@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:note_app/utils/strings.dart';
 
 import '../../Widgets/settings_list.dart';
 
@@ -22,7 +23,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),
         backgroundColor: Colors.transparent,
         title: const Text(
-          'Settings',
+          AppStrings.settings,
         ),
       ),
       body: Column(children: [
