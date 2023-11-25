@@ -49,6 +49,7 @@ class AppStrings {
   static const String activeNow = 'Active now';
   static const String writeMessage = 'Write your message';
   static const String welcomeTo = 'Welcome to';
+  static const String shareContent = 'Share Content';
   static const String chatBox = 'ChatBox';
   static const String welcomeScreenDescp =
       'A place where you can contact with people and keep track of your expenses...';

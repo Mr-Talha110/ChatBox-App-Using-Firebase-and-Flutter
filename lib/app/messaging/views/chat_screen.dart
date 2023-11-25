@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:note_app/app/messaging/controller/chat_screen_controller.dart';
 import 'package:note_app/models/contacts_model.dart';
 import 'package:note_app/utils/constants.dart';
 import 'package:note_app/utils/strings.dart';
@@ -14,6 +15,7 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final controller = Get.put(ChatScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +108,12 @@ class _ChatScreenState extends State<ChatScreen> {
           height: 90,
           child: Row(
             children: [
-              const Icon(Icons.attach_file_outlined),
+              IconButton(
+                onPressed: () {
+                  controller.showBottomList();
+                },
+                icon: const Icon(Icons.attach_file_outlined),
+              ),
               const SizedBox(width: 8),
               Expanded(
                 child: Container(

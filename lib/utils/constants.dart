@@ -37,5 +37,11 @@ class AssetRef {
   static const String optionIcon = 'assets/images/options.svg';
   static const String qrCode = 'assets/images/qr.png';
   static const String qrCodeIcon = 'assets/images/qr.svg';
+  static const String cameraIcon = 'assets/images/cameraIcon.svg';
+  static const String contactIcon = 'assets/images/contactIcon.svg';
+  static const String docsIcon = 'assets/images/docsIcon.svg';
+  static const String locationIcon = 'assets/images/locationIcon.svg';
+  static const String picsIcon = 'assets/images/picsIcon.svg';
+  static const String pollIcon = 'assets/images/pollIcon.svg';
   static const String atLogo = 'assets/images/at.png';
 }
