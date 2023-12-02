@@ -44,4 +44,5 @@ class AssetRef {
   static const String picsIcon = 'assets/images/picsIcon.svg';
   static const String pollIcon = 'assets/images/pollIcon.svg';
   static const String atLogo = 'assets/images/at.png';
+  static const String splashLogo = 'assets/images/mainlogo.png';
 }
