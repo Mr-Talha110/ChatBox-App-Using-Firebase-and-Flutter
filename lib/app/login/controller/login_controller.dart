@@ -8,6 +8,7 @@ import '../../signup/views/signup_screen.dart';
 import '../views/forgot_password_screen.dart';
 
 class LoginController extends GetxController {
+  RxBool isLoading = false.obs;
   RxBool showPassword = false.obs;
   hidePassword() {
     showPassword.value = !showPassword.value;
@@ -18,6 +19,7 @@ class LoginController extends GetxController {
   }
 
   login(dynamic loginEmailController, dynamic loginPasswordController) async {
+    isLoading.value = true;
     var loginEmail = loginEmailController.text.trim();
     var loginPassword = loginPasswordController.text.trim();
     try {
@@ -26,11 +28,16 @@ class LoginController extends GetxController {
                   email: loginEmail, password: loginPassword))
           .user;
       if (firebaseUser != null) {
+        isLoading.value = false;
         Get.offAll(const DashboardScreen());
       } else {
+        isLoading.value = false;
+
         print('Cannot login at that time. Please check email and password');
       }
     } on FirebaseAuthException catch (e) {
+      isLoading.value = false;
+
       print('Eror login $e');
     }
   }

@@ -163,22 +163,28 @@ class _LoginScreenState extends State<LoginScreen> {
             onTap: () {
               controller.login(loginEmailController, loginPasswordController);
             },
-            child: Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: AppColors.greenColor,
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: const Text(
-                AppStrings.login,
-                style: TextStyle(
-                  color: AppColors.white,
-                  fontSize: 16,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
+            child: Obx(
+              () => Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppColors.greenColor,
+                  borderRadius: BorderRadius.circular(16),
                 ),
+                child: controller.isLoading.value
+                    ? const CircularProgressIndicator(
+                        color: AppColors.white,
+                      )
+                    : const Text(
+                        AppStrings.login,
+                        style: TextStyle(
+                          color: AppColors.white,
+                          fontSize: 16,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
               ),
             ),
           ),
