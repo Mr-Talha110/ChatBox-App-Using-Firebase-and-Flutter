@@ -173,8 +173,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: controller.isLoading.value
-                    ? const CircularProgressIndicator(
-                        color: AppColors.white,
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.white,
+                        ),
                       )
                     : const Text(
                         AppStrings.login,
