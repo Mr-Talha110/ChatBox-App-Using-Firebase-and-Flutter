@@ -2,9 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:note_app/app/login/views/login_screen.dart';
+import 'package:note_app/app/dashboard/views/dashboardScreen.dart';
+import 'package:note_app/utils/popups.dart';
 
-import '../../dashboard/views/dashboardScreen.dart';
 import '../../signup/views/signup_screen.dart';
 import '../views/forgot_password_screen.dart';
 
@@ -23,19 +23,14 @@ class LoginController extends GetxController {
     isLoading.value = true;
     var loginEmail = loginEmailController.text.trim();
     var loginPassword = loginPasswordController.text.trim();
-    FirebaseAuth.instance
+    await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: loginEmail, password: loginPassword)
         .then((value) {
-      if (FirebaseAuth.instance.currentUser != null) {
-        Get.offAll(const DashboardScreen());
-        isLoading.value = false;
-      } else {
-        Get.offAll(const LoginScreen());
-        isLoading.value = false;
-      }
-    }).onError((error, stackTrace) {
+      Get.to(const DashboardScreen());
       isLoading.value = false;
-      print(error);
+    }).onError((error, stackTrace) {
+      PopUps().showErorr(error.toString());
+      isLoading.value = false;
     });
   }
 

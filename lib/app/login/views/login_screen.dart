@@ -166,17 +166,17 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Obx(
               () => Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: EdgeInsets.symmetric(
+                    vertical: controller.isLoading.value ? 10 : 20),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: AppColors.greenColor,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: controller.isLoading.value
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                          color: AppColors.white,
-                        ),
+                    ? const CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: AppColors.white,
                       )
                     : const Text(
                         AppStrings.login,
