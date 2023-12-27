@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/models/user_model.dart';
 
 class AppColors {
   static const Color backgroundColor = Color(0xff000E08);
@@ -46,4 +47,9 @@ class AssetRef {
   static const String pollIcon = 'assets/images/pollIcon.svg';
   static const String atLogo = 'assets/images/at.png';
   static const String splashLogo = 'assets/images/mainlogo.png';
+  static const String imagePicker = 'assets/images/camera.png';
+}
+
+class AppManager {
+  static UserModel? userModel;
 }

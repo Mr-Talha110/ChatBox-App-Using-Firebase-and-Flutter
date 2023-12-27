@@ -54,9 +54,36 @@ class _MyAccountScreenState extends State<MyAccountScreen> {
         alignment: Alignment.topCenter,
         child: Column(
           children: [
-            Image.asset(
-              AssetRef.user,
-              width: 82,
+            Stack(
+              children: [
+                SizedBox(
+                  width: 82,
+                  height: 82,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(41),
+                    child: Image.asset(
+                      AppManager.userModel == null
+                          ? AssetRef.user
+                          : AppManager.userModel!.imageUrl!,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: InkWell(
+                    onTap: () async {
+                      await controller.getImage();
+                      setState(() {});
+                    },
+                    child: Image.asset(
+                      AssetRef.imagePicker,
+                      width: 30,
+                    ),
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 10),
             const Text("Nazrul Islam",

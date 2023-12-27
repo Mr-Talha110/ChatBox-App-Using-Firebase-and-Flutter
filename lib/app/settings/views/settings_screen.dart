@@ -53,9 +53,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 children: [
                   Row(
                     children: [
-                      Image.asset(
-                        AssetRef.user,
+                      SizedBox(
                         width: 60,
+                        height: 60,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.asset(
+                            AppManager.userModel == null
+                                ? AssetRef.user
+                                : AppManager.userModel!.imageUrl!,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
                       const SizedBox(width: 12),
                       const Column(

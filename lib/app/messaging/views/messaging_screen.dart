@@ -59,9 +59,18 @@ class _MessagingScreenState extends State<MessagingScreen> {
               onTap: () {
                 Get.to(const MyAccountScreen());
               },
-              child: Image.asset(
-                AssetRef.user,
+              child: SizedBox(
                 width: 44,
+                height: 44,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(22),
+                  child: Image.asset(
+                    AppManager.userModel == null
+                        ? AssetRef.user
+                        : AppManager.userModel!.imageUrl!,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
             const SizedBox(width: 15),
@@ -141,15 +150,21 @@ class _MessagingScreenState extends State<MessagingScreen> {
                                         colorFilter: const ColorFilter.mode(
                                             AppColors.white, BlendMode.srcIn),
                                       )),
-                                  Container(
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 8),
-                                      padding: const EdgeInsets.all(8),
-                                      decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(100),
-                                          color: AppColors.redAlert),
-                                      child: SvgPicture.asset(AssetRef.bin)),
+                                  InkWell(
+                                    onTap: () {
+                                      contactList.removeAt(index);
+                                      setState(() {});
+                                    },
+                                    child: Container(
+                                        margin: const EdgeInsets.symmetric(
+                                            horizontal: 8),
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            color: AppColors.redAlert),
+                                        child: SvgPicture.asset(AssetRef.bin)),
+                                  ),
                                 ],
                               ),
                               child: InkWell(
