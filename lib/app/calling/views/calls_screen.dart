@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/app/contact/controller/contact_list_controller.dart';
 import 'package:intl/intl.dart';
+import 'package:note_app/app/contact/views/search_contact_screen.dart';
 import 'package:note_app/utils/constants.dart';
 import 'package:note_app/utils/strings.dart';
 
@@ -26,9 +27,14 @@ class _CallsScreenState extends State<CallsScreen> {
           AppStrings.calls,
           style: TextStyle(color: AppColors.white),
         ),
-        leading: const Icon(
-          Icons.search,
-          color: AppColors.white,
+        leading: IconButton(
+          onPressed: () {
+            Get.to(const SearchContactScreen());
+          },
+          icon: const Icon(
+            Icons.search,
+            color: AppColors.white,
+          ),
         ),
         backgroundColor: Colors.transparent,
         actions: const [

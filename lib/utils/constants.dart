@@ -12,6 +12,7 @@ class AppColors {
   static const Color lightGreen = Color(0xff20A090);
   static const Color lightGrey = Color(0xFFC7C7C7);
   static const Color dotGrey = Color(0xffE6E6E6);
+  static const Color fieldColor = Color(0xfff3f6f6);
 }
 
 class AssetRef {

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:note_app/app/contact/views/search_contact_screen.dart';
 import 'package:note_app/models/contacts_model.dart';
 
 class ContactListController extends GetxController {
@@ -53,5 +54,9 @@ class ContactListController extends GetxController {
   void sortContacts() {
     contacts.sort(compareTo);
     update();
+  }
+
+  goToSearchScreen() {
+    Get.to(const SearchContactScreen());
   }
 }

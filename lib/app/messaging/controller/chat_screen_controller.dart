@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:note_app/app/contact/views/search_contact_screen.dart';
 import 'package:note_app/models/options_list_model.dart';
 import 'package:note_app/utils/constants.dart';
 import 'package:note_app/widgets/bottom_options.dart';
@@ -33,5 +34,9 @@ class ChatScreenController extends GetxController {
 
   showBottomList() {
     Get.bottomSheet(const BottomOptions());
+  }
+
+  goToSearchScreen() {
+    Get.to(const SearchContactScreen());
   }
 }

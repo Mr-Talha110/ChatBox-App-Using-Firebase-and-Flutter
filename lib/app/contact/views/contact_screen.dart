@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:note_app/app/contact/controller/contact_list_controller.dart';
 import 'package:note_app/utils/strings.dart';
+import 'package:note_app/widgets/people_list.dart';
 
 import '../../../utils/constants.dart';
 
@@ -13,11 +14,11 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  final contactListController = Get.put(ContactListController());
+  final controller = Get.put(ContactListController());
   @override
   void initState() {
     super.initState();
-    contactListController.sortContacts();
+    controller.sortContacts();
   }
 
   @override
@@ -32,9 +33,14 @@ class _ContactScreenState extends State<ContactScreen> {
           fontWeight: FontWeight.w500,
         ),
         backgroundColor: Colors.transparent,
-        leading: const Icon(
-          Icons.search,
-          color: AppColors.white,
+        leading: IconButton(
+          onPressed: () {
+            controller.goToSearchScreen();
+          },
+          icon: const Icon(
+            Icons.search,
+            color: AppColors.white,
+          ),
         ),
         title: const Text(AppStrings.contact),
         centerTitle: true,
@@ -79,13 +85,12 @@ class _ContactScreenState extends State<ContactScreen> {
                   )),
               Expanded(
                   child: ListView.builder(
-                      itemCount: contactListController.contacts.length,
+                      itemCount: controller.contacts.length,
                       itemBuilder: (context, index) {
-                        final contact = contactListController.contacts[index];
+                        final contact = controller.contacts[index];
                         if (index == 0 ||
                             contact.name[0] !=
-                                contactListController
-                                    .contacts[index - 1].name[0]) {
+                                controller.contacts[index - 1].name[0]) {
                           return Column(
                             children: [
                               const SizedBox(height: 20),
@@ -98,73 +103,18 @@ class _ContactScreenState extends State<ContactScreen> {
                                     )),
                               ),
                               const SizedBox(height: 20),
-                              Container(
-                                margin:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                width: double.infinity,
-                                child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Image.asset(
-                                        contact.image,
-                                        width: 52,
-                                      ),
-                                      const SizedBox(width: 20),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(contact.name,
-                                              style: const TextStyle(
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.w500,
-                                              )),
-                                          Text(contact.bio,
-                                              style: const TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w500,
-                                              ))
-                                        ],
-                                      )
-                                    ]),
-                              ),
+                              PeopleList(
+                                bio: contact.bio,
+                                imageUrl: contact.image,
+                                name: contact.name,
+                              )
                             ],
                           );
                         } else {
-                          return Container(
-                            margin: const EdgeInsets.symmetric(vertical: 10),
-                            width: double.infinity,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Image.asset(
-                                    contact.image,
-                                    width: 52,
-                                  ),
-                                  const SizedBox(width: 20),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(contact.name,
-                                          style: const TextStyle(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w500,
-                                          )),
-                                      Text(contact.bio,
-                                          style: const TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500,
-                                          ))
-                                    ],
-                                  )
-                                ]),
+                          return PeopleList(
+                            bio: contact.bio,
+                            imageUrl: contact.image,
+                            name: contact.name,
                           );
                         }
                       }))

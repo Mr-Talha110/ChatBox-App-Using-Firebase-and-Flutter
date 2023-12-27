@@ -51,6 +51,10 @@ class AppStrings {
   static const String welcomeTo = 'Welcome to';
   static const String shareContent = 'Share Content';
   static const String chatBox = 'ChatBox';
+  static const String search = 'Search';
+  static const String noUserFound = 'No People Found';
+  static const String people = 'People';
+
   static const String welcomeScreenDescp =
       'A place where you can contact with people and keep track of your expenses...';
 

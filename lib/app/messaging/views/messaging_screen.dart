@@ -3,6 +3,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:note_app/app/contact/controller/contact_list_controller.dart';
+import 'package:note_app/app/messaging/controller/chat_screen_controller.dart';
 import 'package:note_app/app/notes/views/create_note_screen.dart';
 import 'package:note_app/app/messaging/views/chat_screen.dart';
 import 'package:note_app/app/settings/views/my_account_screen.dart';
@@ -19,6 +20,7 @@ class MessagingScreen extends StatefulWidget {
 
 class _MessagingScreenState extends State<MessagingScreen> {
   final contactList = Get.put(ContactListController()).contacts;
+  final controller = Get.put(ChatScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,9 +45,14 @@ class _MessagingScreenState extends State<MessagingScreen> {
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
-          leading: const Icon(
-            Icons.search,
-            color: AppColors.white,
+          leading: IconButton(
+            onPressed: () {
+              controller.goToSearchScreen();
+            },
+            icon: const Icon(
+              Icons.search,
+              color: AppColors.white,
+            ),
           ),
           actions: [
             InkWell(
