@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/utils/strings.dart';
 
+import '../models/user_model.dart';
 import '../utils/constants.dart';
 
 class MyInfo extends StatelessWidget {
-  const MyInfo({super.key});
+  final UserModel? userModel;
+  const MyInfo({super.key, this.userModel});
 
   @override
   Widget build(BuildContext context) {
@@ -29,34 +31,36 @@ class MyInfo extends StatelessWidget {
                     color: AppColors.dotGrey)),
           ),
           const SizedBox(height: 50),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.displayName,
+              const Text(AppStrings.displayName,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: AppColors.greyColor)),
-              SizedBox(height: 5),
-              Text("Nazrul Islam",
-                  style: TextStyle(
+              const SizedBox(height: 5),
+              Text(userModel!.name ?? '',
+                  // "Nazrul Islam",
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ))
             ],
           ),
           const SizedBox(height: 30),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.emailAddress,
+              const Text(AppStrings.emailAddress,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: AppColors.greyColor)),
-              SizedBox(height: 5),
-              Text("nazrulIslam20@gmail.com",
-                  style: TextStyle(
+              const SizedBox(height: 5),
+              Text(userModel!.userEmail ?? '',
+                  // "nazrulIslam20@gmail.com",
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ))
@@ -80,17 +84,17 @@ class MyInfo extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 30),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.phoneNumber,
+              const Text(AppStrings.phoneNumber,
                   style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                       color: AppColors.greyColor)),
-              SizedBox(height: 5),
-              Text("(320) 555-0104",
-                  style: TextStyle(
+              const SizedBox(height: 5),
+              Text(userModel!.userPhone ?? '',
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ))

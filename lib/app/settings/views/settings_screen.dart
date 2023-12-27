@@ -59,9 +59,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
                           child: Image.asset(
-                            AppManager.userModel == null
-                                ? AssetRef.user
-                                : AppManager.userModel!.imageUrl!,
+                            AssetRef.user,
                             fit: BoxFit.cover,
                           ),
                         ),
